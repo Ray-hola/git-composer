@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Composer"
+  short_description: "帮助新手搭好项目结构与治理规范，设计好看的仓库首页，并验证使用与展示效果"
+  default_prompt: "使用 $git-composer，按项目阶段完善目录、治理和说明文件，参考 beautify-github-readme 设计好看的首页，展示实际预览并验证，用新手能懂的话解释。"
