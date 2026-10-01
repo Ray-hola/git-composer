@@ -1,0 +1,30 @@
+{
+  "record_type": "rule_candidate",
+  "rule_id": "remote-publish.confirm-target-and-scope",
+  "trigger": ["push", "upload", "publish"],
+  "applies_when": ["the user requests an external repository write"],
+  "do_not_apply_when": ["the user requests local-only inspection"],
+  "facts_to_collect": ["repository root", "remote URL", "target branch", "visibility", "publish file set"],
+  "allowed_tools": ["git", "github_read_api"],
+  "safety": {
+    "side_effect_level": "remote_write",
+    "confirmation_required": true,
+    "privacy_review": "passed",
+    "license_review": "pending"
+  },
+  "confirmation_gate": {
+    "required": true,
+    "when": "before_remote_write",
+    "question": "Confirm the exact remote, branch, visibility, and publish scope before writing."
+  },
+  "procedure": ["inspect local state", "review sensitive-data scan", "show exact publish scope", "write only after confirmation"],
+  "verification": ["read the remote commit and tree", "compare with the prepared local scope"],
+  "stop_conditions": ["target or visibility is unknown", "real credentials are present", "remote verification fails"],
+  "evidence_refs": ["evidence:example/maintainable-tool:upload-gate"],
+  "confidence": {
+    "score": 0.94,
+    "level": "high",
+    "basis": ["repeated safety guidance", "direct remote-write risk"]
+  },
+  "status": "candidate"
+}

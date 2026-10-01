@@ -1,0 +1,33 @@
+{
+  "record_type": "evidence_record",
+  "repository": {
+    "full_name": "example/maintainable-tool",
+    "html_url": "https://github.com/example/maintainable-tool",
+    "visibility": "public",
+    "default_branch": "main",
+    "is_fork": false,
+    "is_archived": false
+  },
+  "category": "governance",
+  "evidence_kind": "observed",
+  "observation": "The contribution guide names the local check command and expected output.",
+  "signals": ["CONTRIBUTING.md", "workflow:ci.yml"],
+  "provenance": {
+    "url": "https://github.com/example/maintainable-tool/blob/0123456789abcdef0123456789abcdef01234567/CONTRIBUTING.md",
+    "path": "CONTRIBUTING.md",
+    "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+    "retrieved_at": "2026-09-30T12:00:00Z",
+    "content_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "confidence": {
+    "score": 0.88,
+    "level": "high",
+    "basis": ["direct file evidence", "matching workflow configuration"]
+  },
+  "safety": {
+    "side_effect_level": "read_only",
+    "confirmation_required": false,
+    "privacy_review": "passed",
+    "license_review": "pending"
+  }
+}

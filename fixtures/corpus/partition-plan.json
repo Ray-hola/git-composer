@@ -1,0 +1,20 @@
+{
+  "fixture_type": "partition_plan",
+  "seed": 42,
+  "candidate_target": 100,
+  "network_enabled": false,
+  "expected_partition_ids": [
+    "stars_100k_plus",
+    "stars_10k_100k",
+    "stars_1k_10k",
+    "stars_100_1k",
+    "stars_0_100"
+  ],
+  "expected_counts": {
+    "stars_100k_plus": 5,
+    "stars_10k_100k": 15,
+    "stars_1k_10k": 30,
+    "stars_100_1k": 30,
+    "stars_0_100": 20
+  }
+}

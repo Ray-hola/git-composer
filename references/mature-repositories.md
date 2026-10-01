@@ -14,6 +14,14 @@
 
 计数来源：[cli/cli 元数据](https://api.github.com/repos/cli/cli)、[vitejs/vite 元数据](https://api.github.com/repos/vitejs/vite)、[fastapi/fastapi 元数据](https://api.github.com/repos/fastapi/fastapi)、[astral-sh/ruff 元数据](https://api.github.com/repos/astral-sh/ruff)、[sindresorhus/awesome 元数据](https://api.github.com/repos/sindresorhus/awesome)。接口是实时数据，表中保留本次采样值。
 
+## API 不可用时的网页回退证据
+
+当 `api.github.com` 出现 DNS 或 API 阻断时，可以用 webfetch 读取仓库公开 HTML 页面，记录页面当日显示的默认分支、星标显示值和可见文件/资源。2026-09-30 UTC 的这份回退记录保存在 [`fixtures/corpus/github-public-html-fallback-report.json`](../fixtures/corpus/github-public-html-fallback-report.json)，每条记录都保留仓库页面 URL、`evidence_kind=public_html` 和可复核的可见证据。
+
+网页上的星标是经过四舍五入的展示值，例如 `46.5k`，不是 API 的精确整数，也不能替换上表的旧 API 快照。回退记录只能证明页面当时显示了什么；按照无声明规则，不得据此声称精确当前 star 数、API 等价性或阈值判断。API 恢复后仍需重新读取，才能生成新的精确元数据快照；历史快照不要求与新采样的 star 数相等。
+
+这份证据仅精确到日（`snapshot_precision=day`），不虚构具体抓取时刻。日期校验将 `snapshot_date` 所在 `snapshot_timezone` 的日初作为最早可能时刻，与带时区的校验时刻统一转换为 UTC 后比较；只有整个采样日尚未开始才判为未来。同一天内的先后顺序不能从日级证据确定。例如，2026-10-01 00:00 Asia/Shanghai 与 2026-09-30 16:00 UTC 是同一时刻，不能只比较日期字符串。
+
 ## 怎样选择参照
 
 先看目标项目的真实问题，再选最相关的一到两个案例。语言相同不代表治理需求相同：一个 Python 小脚本可以更接近简单 CLI；一个知识库可以更接近文档集合。检查使用者、贡献者、发布频率、支持环境和维护能力，避免按名气排序后全套移植。

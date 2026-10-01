@@ -1,0 +1,646 @@
+{
+  "report_type": "github_public_document_evidence_batch",
+  "schema_version": 2,
+  "batch_id": "phase3b-mature-docs",
+  "snapshot_date": "2026-09-30",
+  "snapshot_timezone": "UTC",
+  "source": {
+    "method": "webfetch",
+    "read_only": true,
+    "first_party_only": true,
+    "network_scope": "public_html",
+    "api_used": false
+  },
+  "provenance": {
+    "fixed_sha_documents": 0,
+    "branch_url_documents": 26,
+    "sha_status": "not_obtainable_from_public_html",
+    "sha_blocker": "GitHub HTML fallback exposed branch/path/content but no full commit permalink; api.github.com DNS/API was unavailable.",
+    "html_rounded_values_not_used": true,
+    "official_url_documents": 4
+  },
+  "counts": {
+    "metadata_records": 5,
+    "documents_read": 30,
+    "unique_documents_read": 30,
+    "fixed_sha_documents": 0,
+    "branch_url_documents": 26,
+    "procedure_cards": 6,
+    "official_url_documents": 4
+  },
+  "target": {
+    "candidate_projects": 10000,
+    "status": "pending",
+    "definition": "At least 10,000 deduplicated owner/name candidate project records; document count is not a substitute."
+  },
+  "repositories": [
+    {
+      "full_name": "kubernetes/kubernetes",
+      "project_type": "container_orchestrator",
+      "default_branch": "master",
+      "snapshot_commit_sha": null,
+      "snapshot_sha_status": "not_obtainable_from_public_html"
+    },
+    {
+      "full_name": "rust-lang/rust",
+      "project_type": "systems_language",
+      "default_branch": "main",
+      "snapshot_commit_sha": null,
+      "snapshot_sha_status": "not_obtainable_from_public_html"
+    },
+    {
+      "full_name": "django/django",
+      "project_type": "python_web_framework",
+      "default_branch": "main",
+      "snapshot_commit_sha": null,
+      "snapshot_sha_status": "not_obtainable_from_public_html"
+    },
+    {
+      "full_name": "nodejs/node",
+      "project_type": "js_runtime",
+      "default_branch": "main",
+      "snapshot_commit_sha": null,
+      "snapshot_sha_status": "not_obtainable_from_public_html"
+    },
+    {
+      "full_name": "pytorch/pytorch",
+      "project_type": "ml_framework",
+      "default_branch": "main",
+      "snapshot_commit_sha": null,
+      "snapshot_sha_status": "not_obtainable_from_public_html"
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "k8s-contribution",
+      "repository": "kubernetes/kubernetes",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/kubernetes/kubernetes/blob/master/CONTRIBUTING.md",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/CONTRIBUTING.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The entry point sends contributors to the community Contributor Guide and requires the Kubernetes CLA before contribution."
+    },
+    {
+      "document_id": "k8s-governance",
+      "repository": "kubernetes/kubernetes",
+      "category": "governance",
+      "path": "governance.md",
+      "source_url": "https://github.com/kubernetes/community/blob/main/governance.md",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes/community/main/governance.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The community governance page describes open, welcoming, transparent work and SIG or subproject ownership through charters."
+    },
+    {
+      "document_id": "k8s-security",
+      "repository": "kubernetes/kubernetes",
+      "category": "security",
+      "path": "SECURITY_CONTACTS",
+      "source_url": "https://github.com/kubernetes/kubernetes/blob/master/SECURITY_CONTACTS",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes/kubernetes/master/SECURITY_CONTACTS",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Security contacts direct reporters to the Kubernetes security process and warn against reporting vulnerabilities directly to named contacts."
+    },
+    {
+      "document_id": "k8s-release",
+      "repository": "kubernetes/kubernetes",
+      "category": "release",
+      "path": "README.md",
+      "source_url": "https://github.com/kubernetes/sig-release/blob/master/README.md",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes/sig-release/master/README.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "SIG Release owns release-team coordination, release notes, and versioning processes under its charter."
+    },
+    {
+      "document_id": "k8s-ci",
+      "repository": "kubernetes/kubernetes",
+      "category": "ci",
+      "path": "README.md",
+      "source_url": "https://github.com/kubernetes/test-infra/blob/master/README.md",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes/test-infra/master/README.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Kubernetes test-infra provides testing and automation tools, Prow CI, job configuration, local testing, and bot commands."
+    },
+    {
+      "document_id": "k8s-workflow",
+      "repository": "kubernetes/kubernetes",
+      "category": "workflow",
+      "path": "pkg/config/config.go",
+      "source_url": "https://github.com/kubernetes-sigs/prow/blob/main/pkg/config/config.go",
+      "raw_url": "https://raw.githubusercontent.com/kubernetes-sigs/prow/main/pkg/config/config.go",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Prow configuration is a concrete automation source consumed by Kubernetes testing and merge workflows."
+    },
+    {
+      "document_id": "rust-contribution",
+      "repository": "rust-lang/rust",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/rust-lang/rust/blob/main/CONTRIBUTING.md",
+      "raw_url": "https://raw.githubusercontent.com/rust-lang/rust/main/CONTRIBUTING.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Rust directs new contributors to the community channel and development guides, with subtree and source-layout rules for compiler and standard-library work."
+    },
+    {
+      "document_id": "rust-governance",
+      "repository": "rust-lang/rust",
+      "category": "governance",
+      "path": "README.md",
+      "source_url": "https://github.com/rust-lang/team/blob/main/README.md",
+      "raw_url": "https://raw.githubusercontent.com/rust-lang/team/main/README.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The Rust team repository defines team structure and permission synchronization, with membership changes made by pull request."
+    },
+    {
+      "document_id": "rust-security",
+      "repository": "rust-lang/rust",
+      "category": "security",
+      "path": "security policy",
+      "source_url": "https://www.rust-lang.org/policies/security/",
+      "raw_url": null,
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Rust publishes a dedicated security policy for reporting and handling vulnerabilities."
+    },
+    {
+      "document_id": "rust-release",
+      "repository": "rust-lang/rust",
+      "category": "release",
+      "path": "RELEASES.md",
+      "source_url": "https://github.com/rust-lang/rust/blob/main/RELEASES.md",
+      "raw_url": "https://raw.githubusercontent.com/rust-lang/rust/main/RELEASES.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The Rust release notes document is the project release record and accompanies the stable release process."
+    },
+    {
+      "document_id": "rust-ci",
+      "repository": "rust-lang/rust",
+      "category": "ci",
+      "path": ".github/workflows/ci.yml",
+      "source_url": "https://github.com/rust-lang/rust/blob/main/.github/workflows/ci.yml",
+      "raw_url": "https://raw.githubusercontent.com/rust-lang/rust/main/.github/workflows/ci.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Rust CI calculates jobs through src/ci/citool and src/ci/github-actions/jobs.yml, with explicit triggers, permissions, concurrency, and matrices."
+    },
+    {
+      "document_id": "rust-workflow",
+      "repository": "rust-lang/rust",
+      "category": "workflow",
+      "path": ".github/ISSUE_TEMPLATE/tracking_issue.md",
+      "source_url": "https://github.com/rust-lang/rust/blob/main/.github/ISSUE_TEMPLATE/tracking_issue.md",
+      "raw_url": "https://raw.githubusercontent.com/rust-lang/rust/main/.github/ISSUE_TEMPLATE/tracking_issue.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The tracking issue template is for accepted features or RFC work and asks for implementation, documentation, and stabilization status."
+    },
+    {
+      "document_id": "django-contribution",
+      "repository": "django/django",
+      "category": "contribution",
+      "path": "CONTRIBUTING.rst",
+      "source_url": "https://github.com/django/django/blob/main/CONTRIBUTING.rst",
+      "raw_url": "https://raw.githubusercontent.com/django/django/main/CONTRIBUTING.rst",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Django accepts code, documentation, bug reports, and reviews; non-trivial pull requests should begin with a Trac ticket and follow the contribution guide."
+    },
+    {
+      "document_id": "django-governance",
+      "repository": "django/django",
+      "category": "governance",
+      "path": "docs/internals/organization.txt",
+      "source_url": "https://github.com/django/django/blob/main/docs/internals/organization.txt",
+      "raw_url": "https://raw.githubusercontent.com/django/django/main/docs/internals/organization.txt",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Django documents its organization, roles, and project decision structure in the internals guide."
+    },
+    {
+      "document_id": "django-security",
+      "repository": "django/django",
+      "category": "security",
+      "path": "internals/security",
+      "source_url": "https://docs.djangoproject.com/en/dev/internals/security/",
+      "raw_url": null,
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Django provides a dedicated security reporting and handling guide in its official documentation."
+    },
+    {
+      "document_id": "django-release",
+      "repository": "django/django",
+      "category": "release",
+      "path": "docs/internals/release-process.txt",
+      "source_url": "https://github.com/django/django/blob/main/docs/internals/release-process.txt",
+      "raw_url": "https://raw.githubusercontent.com/django/django/main/docs/internals/release-process.txt",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Django documents the release process, including release preparation, versioning, and publishing steps."
+    },
+    {
+      "document_id": "django-ci",
+      "repository": "django/django",
+      "category": "ci",
+      "path": ".github/workflows/tests.yml",
+      "source_url": "https://github.com/django/django/blob/main/.github/workflows/tests.yml",
+      "raw_url": "https://raw.githubusercontent.com/django/django/main/.github/workflows/tests.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The tests workflow filters documentation-only changes and runs Django tests across Windows and Ubuntu Python matrices, plus JavaScript and script checks."
+    },
+    {
+      "document_id": "django-workflow",
+      "repository": "django/django",
+      "category": "workflow",
+      "path": ".github/workflows/docs.yml",
+      "source_url": "https://github.com/django/django/blob/main/.github/workflows/docs.yml",
+      "raw_url": "https://raw.githubusercontent.com/django/django/main/.github/workflows/docs.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The docs workflow has path filters, concurrency and read permissions, then runs documentation lint, formatting, and spelling checks."
+    },
+    {
+      "document_id": "node-contribution",
+      "repository": "nodejs/node",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/nodejs/node/blob/main/CONTRIBUTING.md",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/CONTRIBUTING.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Node contribution guidance covers code, documentation, infrastructure, and help, with separate issue and pull request paths under open governance."
+    },
+    {
+      "document_id": "node-governance",
+      "repository": "nodejs/node",
+      "category": "governance",
+      "path": "GOVERNANCE.md",
+      "source_url": "https://github.com/nodejs/node/blob/main/GOVERNANCE.md",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/GOVERNANCE.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Node governance describes triagers, collaborators, and the TSC; triagers can label, comment on, close, and reopen issues."
+    },
+    {
+      "document_id": "node-security",
+      "repository": "nodejs/node",
+      "category": "security",
+      "path": "SECURITY.md",
+      "source_url": "https://github.com/nodejs/node/blob/main/SECURITY.md",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/SECURITY.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Node routes security bugs through HackerOne with acknowledgement timelines and OpenJS CNA escalation."
+    },
+    {
+      "document_id": "node-release",
+      "repository": "nodejs/node",
+      "category": "release",
+      "path": "doc/contributing/releases.md",
+      "source_url": "https://github.com/nodejs/node/blob/main/doc/contributing/releases.md",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/doc/contributing/releases.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "Node release instructions are for TSC-authorized release agents and cover staging, branches, changelog, build, test, tag, signing, promotion, and GitHub release steps."
+    },
+    {
+      "document_id": "node-ci",
+      "repository": "nodejs/node",
+      "category": "ci",
+      "path": ".github/workflows/benchmark.yml",
+      "source_url": "https://github.com/nodejs/node/blob/main/.github/workflows/benchmark.yml",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/.github/workflows/benchmark.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The benchmark workflow builds Node at the base and merge commits before running benchmark comparisons."
+    },
+    {
+      "document_id": "node-workflow",
+      "repository": "nodejs/node",
+      "category": "workflow",
+      "path": ".github/workflows/label-pr.yml",
+      "source_url": "https://github.com/nodejs/node/blob/main/.github/workflows/label-pr.yml",
+      "raw_url": "https://raw.githubusercontent.com/nodejs/node/main/.github/workflows/label-pr.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The label workflow runs on pull request events with read-only contents permission and a pinned node-pr-labeler action plus repository configuration."
+    },
+    {
+      "document_id": "pytorch-contribution",
+      "repository": "pytorch/pytorch",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/pytorch/pytorch/blob/main/CONTRIBUTING.md",
+      "raw_url": "https://raw.githubusercontent.com/pytorch/pytorch/main/CONTRIBUTING.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "PyTorch keeps an extensive contribution guide for code, review, development environments, and project-specific contributor workflows."
+    },
+    {
+      "document_id": "pytorch-governance",
+      "repository": "pytorch/pytorch",
+      "category": "governance",
+      "path": "foundation governance",
+      "source_url": "https://pytorch.org/foundation/",
+      "raw_url": null,
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The PyTorch Foundation page describes the foundation board and points to the project technical governance structure maintained by the community."
+    },
+    {
+      "document_id": "pytorch-security",
+      "repository": "pytorch/pytorch",
+      "category": "security",
+      "path": "SECURITY.md",
+      "source_url": "https://github.com/pytorch/pytorch/blob/main/SECURITY.md",
+      "raw_url": "https://raw.githubusercontent.com/pytorch/pytorch/main/SECURITY.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "PyTorch warns that untrusted models can execute code, recommends isolated environments and provenance or checksums, and gives special caution for torch.load."
+    },
+    {
+      "document_id": "pytorch-release",
+      "repository": "pytorch/pytorch",
+      "category": "release",
+      "path": "RELEASE.md",
+      "source_url": "https://github.com/pytorch/pytorch/blob/main/RELEASE.md",
+      "raw_url": "https://raw.githubusercontent.com/pytorch/pytorch/main/RELEASE.md",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "PyTorch patch releases require a qualifying regression, triage and Go-No-Go decisions, and a multi-week release process."
+    },
+    {
+      "document_id": "pytorch-ci",
+      "repository": "pytorch/pytorch",
+      "category": "ci",
+      "path": "Continuous-Integration wiki",
+      "source_url": "https://github.com/pytorch/pytorch/wiki/Continuous-Integration",
+      "raw_url": null,
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The PyTorch CI guide explains GitHub Actions workflows, jobs, runs, matrices, PR versus main behavior, ciflow labels, sharding, and reruns."
+    },
+    {
+      "document_id": "pytorch-workflow",
+      "repository": "pytorch/pytorch",
+      "category": "workflow",
+      "path": ".github/workflows/_linux-build.yml",
+      "source_url": "https://github.com/pytorch/pytorch/blob/main/.github/workflows/_linux-build.yml",
+      "raw_url": "https://raw.githubusercontent.com/pytorch/pytorch/main/.github/workflows/_linux-build.yml",
+      "commit_sha": null,
+      "sha_status": "not_obtainable_from_public_html",
+      "evidence_kind": "public_html_declared",
+      "summary": "The reusable Linux build workflow defines build and test inputs, matrix controls, labels, artifacts, and cloud execution settings."
+    }
+  ],
+  "procedure_cards": [
+    {
+      "card_id": "use-project-entrypoint-batch-2",
+      "title": "Read the project entrypoint before implementation",
+      "claim_kind": "cross_project_procedure",
+      "verification_level": "observed_public_html",
+      "applies_when": [
+        "starting an external change in a mature project",
+        "the repository has a contribution guide or required contributor agreement"
+      ],
+      "counterexamples": [
+        "an existing maintainer assignment already names the governing procedure",
+        "a one-line local experiment is not being proposed upstream"
+      ],
+      "procedure": [
+        "read CONTRIBUTING and the linked community or developer guide",
+        "identify required agreements, issue trackers, labels, tests, and scope limits before editing",
+        "keep the change within the documented acceptance path"
+      ],
+      "verification": [
+        "record the canonical guide URL and confirm the proposed change has a documented issue, ticket, or contributor gate",
+        "run the guide-required focused checks before opening a review"
+      ],
+      "recovery": [
+        "stop if the entrypoint redirects to a different tracker or community guide",
+        "ask the project maintainer or community channel which path owns the request"
+      ],
+      "evidence_refs": [
+        "k8s-contribution",
+        "rust-contribution",
+        "django-contribution",
+        "node-contribution",
+        "pytorch-contribution"
+      ],
+      "status": "candidate"
+    },
+    {
+      "card_id": "route-to-owner-and-tracker-batch-2",
+      "title": "Route work to the documented owner and tracker",
+      "claim_kind": "cross_project_procedure",
+      "verification_level": "cross_project_public_policy",
+      "applies_when": [
+        "the project divides work among SIGs, teams, triagers, or a separate issue tracker",
+        "a request changes behavior owned by a named subsystem"
+      ],
+      "counterexamples": [
+        "a documentation typo with no subsystem owner",
+        "the project explicitly accepts a change without a tracker or ownership handoff"
+      ],
+      "procedure": [
+        "map the change to the owning SIG, team, triager group, or tracker",
+        "check the owner's labels, design gates, and acceptance criteria",
+        "link the implementation or question to that canonical record"
+      ],
+      "verification": [
+        "the issue or review shows the owner or tracker and the expected label or design state",
+        "the proposed files fall within the owner's documented scope"
+      ],
+      "recovery": [
+        "pause when ownership is ambiguous or a design decision is required",
+        "redirect the request to the owner or ask for an explicit maintainer assignment"
+      ],
+      "evidence_refs": [
+        "k8s-governance",
+        "rust-governance",
+        "node-governance",
+        "django-contribution"
+      ],
+      "status": "candidate"
+    },
+    {
+      "card_id": "keep-security-private-batch-2",
+      "title": "Keep vulnerability reports on the security path",
+      "claim_kind": "safety_gate",
+      "verification_level": "cross_project_public_policy",
+      "applies_when": [
+        "the report may expose an exploitable vulnerability, unsafe model, credential, or sensitive reproduction"
+      ],
+      "counterexamples": [
+        "an ordinary non-sensitive bug that the project explicitly routes to its public issue tracker",
+        "a security policy says the report is out of scope and gives a safer public path"
+      ],
+      "procedure": [
+        "read the project security policy or contact instructions",
+        "use the private reporting channel and include only the information needed for triage",
+        "avoid publishing exploit details until the project says disclosure is safe"
+      ],
+      "verification": [
+        "confirm the private channel and acknowledgement or escalation path from the canonical policy",
+        "check that the public issue contains no sensitive reproduction or secret"
+      ],
+      "recovery": [
+        "if sensitive details were exposed, stop further distribution, follow the project escalation policy, and rotate any exposed credential",
+        "if the policy excludes the report, move it to the documented public bug path"
+      ],
+      "evidence_refs": [
+        "k8s-security",
+        "rust-security",
+        "django-security",
+        "node-security",
+        "pytorch-security"
+      ],
+      "status": "candidate"
+    },
+    {
+      "card_id": "trace-ci-source-of-truth-batch-2",
+      "title": "Trace CI to its source of truth",
+      "claim_kind": "cross_project_procedure",
+      "verification_level": "observed_public_html",
+      "applies_when": [
+        "a change is expected to satisfy repository automation",
+        "the project uses generated jobs, reusable workflows, matrices, path filters, or labels"
+      ],
+      "counterexamples": [
+        "a local script that is not wired into project CI",
+        "a documentation-only change excluded by the workflow path filter"
+      ],
+      "procedure": [
+        "read the trigger and path filters in the workflow",
+        "follow references to generated job, matrix, Prow, or reusable-workflow configuration",
+        "run the smallest local commands that cover the changed component and record skipped dimensions"
+      ],
+      "verification": [
+        "map each changed path to a named job or workflow and confirm the local command matches it",
+        "separate declared configuration from a remote run result"
+      ],
+      "recovery": [
+        "if the matrix or job source is unavailable, report the unverified dimension and ask for a maintainer or CI run",
+        "rebase or regenerate when the project documents that workflow definitions are merged or generated"
+      ],
+      "evidence_refs": [
+        "k8s-ci",
+        "k8s-workflow",
+        "rust-ci",
+        "pytorch-ci",
+        "pytorch-workflow",
+        "django-ci",
+        "node-ci"
+      ],
+      "status": "candidate"
+    },
+    {
+      "card_id": "release-authorization-and-rehearsal-batch-2",
+      "title": "Check release authority and rehearse gates",
+      "claim_kind": "release_safety_gate",
+      "verification_level": "cross_project_public_policy",
+      "applies_when": [
+        "preparing a version, tag, package, or published release",
+        "the project documents release agents, go-no-go decisions, staging, or signing"
+      ],
+      "counterexamples": [
+        "a local version bump or changelog draft that is not publishing anything",
+        "a maintainer already supplied the project-specific release authorization and dry-run result"
+      ],
+      "procedure": [
+        "read the release process and identify the authorized role and approval gates",
+        "prepare version, changelog, artifacts, and lockfiles in a staging or dry-run path",
+        "obtain the documented approval before tag, signing, promotion, or publish"
+      ],
+      "verification": [
+        "compare the staged artifact, version, changelog, and target commit",
+        "after publication, verify the package, tag, release, and checks from the project instructions"
+      ],
+      "recovery": [
+        "if a partial release exists, inspect package, tag, and release state before retrying",
+        "do not repeat an immutable publish until the project owner confirms the recovery path"
+      ],
+      "evidence_refs": [
+        "k8s-release",
+        "rust-release",
+        "django-release",
+        "node-release",
+        "pytorch-release"
+      ],
+      "status": "candidate"
+    },
+    {
+      "card_id": "templates-and-workflows-as-contracts-batch-2",
+      "title": "Treat templates and workflows as contracts",
+      "claim_kind": "repository_contract",
+      "verification_level": "observed_public_html",
+      "applies_when": [
+        "opening an issue or PR in a project with a template, labeler, path filter, or reusable workflow",
+        "the request depends on a required form field or event trigger"
+      ],
+      "counterexamples": [
+        "a project explicitly accepts a free-form issue or manual workflow dispatch",
+        "the changed path is outside the workflow trigger and should not be expected to run"
+      ],
+      "procedure": [
+        "inspect required template fields, trigger events, path filters, permissions, and pinned actions",
+        "fill the template or adjust scope so the intended check is selected",
+        "run the focused local check before relying on the remote workflow"
+      ],
+      "verification": [
+        "confirm required fields are complete and the changed path matches the intended workflow trigger",
+        "record the action or configuration pin when it is part of the contract"
+      ],
+      "recovery": [
+        "edit the issue or PR to satisfy the template and labels",
+        "if the workflow did not trigger, inspect event and path filters before rerunning or asking a maintainer"
+      ],
+      "evidence_refs": [
+        "rust-workflow",
+        "node-workflow",
+        "django-workflow",
+        "pytorch-workflow"
+      ],
+      "status": "candidate"
+    }
+  ]
+}

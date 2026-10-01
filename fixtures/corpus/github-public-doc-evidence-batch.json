@@ -1,0 +1,366 @@
+{
+  "report_type": "github_public_document_evidence_batch",
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "snapshot_timezone": "UTC",
+  "source": {
+    "method": "webfetch",
+    "read_only": true,
+    "first_party_only": true
+  },
+  "counts": {
+    "metadata_records": 5,
+    "documents_read": 22,
+    "unique_documents_read": 22,
+    "procedure_cards": 6
+  },
+  "target": {
+    "candidate_projects": 10000,
+    "status": "pending",
+    "definition": "At least 10,000 deduplicated owner/name candidate project records; document count is not a substitute."
+  },
+  "repositories": [
+    {
+      "full_name": "cli/cli",
+      "project_type": "cli",
+      "default_branch": "trunk",
+      "snapshot_commit_sha": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd"
+    },
+    {
+      "full_name": "fastapi/fastapi",
+      "project_type": "python_library",
+      "default_branch": "master",
+      "snapshot_commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e"
+    },
+    {
+      "full_name": "vitejs/vite",
+      "project_type": "js_monorepo",
+      "default_branch": "main",
+      "snapshot_commit_sha": "cf5c0288d526824aead1b24e977400f13c527927"
+    },
+    {
+      "full_name": "astral-sh/ruff",
+      "project_type": "rust_tool",
+      "default_branch": "main",
+      "snapshot_commit_sha": "a4e7c20ca0d42f5cb41485210193548b98ee39c2"
+    },
+    {
+      "full_name": "sindresorhus/awesome",
+      "project_type": "curated_list",
+      "default_branch": "main",
+      "snapshot_commit_sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2"
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "cli-contribution",
+      "repository": "cli/cli",
+      "category": "contribution",
+      "path": ".github/CONTRIBUTING.md",
+      "source_url": "https://github.com/cli/cli/blob/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/.github/CONTRIBUTING.md",
+      "fetch_url": "https://raw.githubusercontent.com/cli/cli/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/.github/CONTRIBUTING.md",
+      "commit_sha": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd",
+      "evidence_kind": "declared",
+      "summary": "External pull requests are limited to help-wanted issues with explicit acceptance criteria; core issues are excluded, and contributors are directed to branch, test, and open a PR."
+    },
+    {
+      "document_id": "cli-structure",
+      "repository": "cli/cli",
+      "category": "structure",
+      "path": "docs/project-layout.md",
+      "source_url": "https://github.com/cli/cli/blob/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/docs/project-layout.md",
+      "fetch_url": "https://raw.githubusercontent.com/cli/cli/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/docs/project-layout.md",
+      "commit_sha": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd",
+      "evidence_kind": "declared",
+      "summary": "The layout names cmd, pkg, docs, script, internal, and go.mod responsibilities, and maps command help to pkg/cmd paths."
+    },
+    {
+      "document_id": "cli-ci",
+      "repository": "cli/cli",
+      "category": "ci",
+      "path": ".github/workflows/go.yml",
+      "source_url": "https://github.com/cli/cli/blob/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/.github/workflows/go.yml",
+      "fetch_url": "https://raw.githubusercontent.com/cli/cli/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/.github/workflows/go.yml",
+      "commit_sha": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd",
+      "evidence_kind": "declared",
+      "summary": "Pushes and pull requests run a three-OS matrix with race-enabled unit and integration tests plus a build; integration tests use a token in the workflow environment."
+    },
+    {
+      "document_id": "cli-release",
+      "repository": "cli/cli",
+      "category": "release",
+      "path": "docs/releasing.md",
+      "source_url": "https://github.com/cli/cli/blob/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/docs/releasing.md",
+      "fetch_url": "https://raw.githubusercontent.com/cli/cli/fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd/docs/releasing.md",
+      "commit_sha": "fc4b137cdef0a6bd28fd461b7cf9c84a5812a8cd",
+      "evidence_kind": "declared",
+      "summary": "A release command builds and signs platform artifacts, requires maintainer approval, creates a tag and GitHub release, and offers staging or local modes for rehearsal."
+    },
+    {
+      "document_id": "fastapi-contribution",
+      "repository": "fastapi/fastapi",
+      "category": "contribution",
+      "path": "docs/en/docs/contributing.md",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/docs/en/docs/contributing.md",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/docs/en/docs/contributing.md",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "The short contribution entry point sends developers to the project help page and the maintainers' contribution guidance."
+    },
+    {
+      "document_id": "fastapi-structure",
+      "repository": "fastapi/fastapi",
+      "category": "structure",
+      "path": "README.md",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/README.md",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/README.md",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "The README gives a minimal Python entry point, an install command, a development server command, and a browser check against the generated API docs."
+    },
+    {
+      "document_id": "fastapi-packaging",
+      "repository": "fastapi/fastapi",
+      "category": "structure",
+      "path": "pyproject.toml",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/pyproject.toml",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/pyproject.toml",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "The package declares a PDM build backend, Python 3.10 minimum, project URLs, optional dependency groups, and a fastapi console entry point."
+    },
+    {
+      "document_id": "fastapi-ci",
+      "repository": "fastapi/fastapi",
+      "category": "ci",
+      "path": ".github/workflows/test.yml",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/.github/workflows/test.yml",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/.github/workflows/test.yml",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "A path-filtered workflow fans tests across Windows, macOS, and Linux with multiple Python and dependency-resolution combinations, and runs coverage and regression jobs."
+    },
+    {
+      "document_id": "fastapi-release",
+      "repository": "fastapi/fastapi",
+      "category": "release",
+      "path": ".github/workflows/publish.yml",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/.github/workflows/publish.yml",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/.github/workflows/publish.yml",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "Publishing is triggered by a published GitHub release, builds with uv, then publishes with an explicit package identity permission."
+    },
+    {
+      "document_id": "fastapi-release-notes",
+      "repository": "fastapi/fastapi",
+      "category": "release",
+      "path": "docs/en/docs/release-notes.md",
+      "source_url": "https://github.com/fastapi/fastapi/blob/33d411dbc3236275dd64d200bfe18d5d60a49b2e/docs/en/docs/release-notes.md",
+      "fetch_url": "https://raw.githubusercontent.com/fastapi/fastapi/33d411dbc3236275dd64d200bfe18d5d60a49b2e/docs/en/docs/release-notes.md",
+      "commit_sha": "33d411dbc3236275dd64d200bfe18d5d60a49b2e",
+      "evidence_kind": "declared",
+      "summary": "Release notes group changes by version and type, including fixes, features, docs, internal updates, and translations."
+    },
+    {
+      "document_id": "vite-contribution",
+      "repository": "vitejs/vite",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/vitejs/vite/blob/cf5c0288d526824aead1b24e977400f13c527927/CONTRIBUTING.md",
+      "fetch_url": "https://raw.githubusercontent.com/vitejs/vite/cf5c0288d526824aead1b24e977400f13c527927/CONTRIBUTING.md",
+      "commit_sha": "cf5c0288d526824aead1b24e977400f13c527927",
+      "evidence_kind": "declared",
+      "summary": "Contributors use pnpm, add tests for features, keep pull requests focused, and follow explicit review and release guidance."
+    },
+    {
+      "document_id": "vite-structure",
+      "repository": "vitejs/vite",
+      "category": "structure",
+      "path": "package.json",
+      "source_url": "https://github.com/vitejs/vite/blob/cf5c0288d526824aead1b24e977400f13c527927/package.json",
+      "fetch_url": "https://raw.githubusercontent.com/vitejs/vite/cf5c0288d526824aead1b24e977400f13c527927/package.json",
+      "commit_sha": "cf5c0288d526824aead1b24e977400f13c527927",
+      "evidence_kind": "declared",
+      "summary": "The root package identifies a private monorepo and exposes build, unit, serve, bundled-serve, build-test, docs, lint, and typecheck commands."
+    },
+    {
+      "document_id": "vite-workspace",
+      "repository": "vitejs/vite",
+      "category": "structure",
+      "path": "pnpm-workspace.yaml",
+      "source_url": "https://github.com/vitejs/vite/blob/cf5c0288d526824aead1b24e977400f13c527927/pnpm-workspace.yaml",
+      "fetch_url": "https://raw.githubusercontent.com/vitejs/vite/cf5c0288d526824aead1b24e977400f13c527927/pnpm-workspace.yaml",
+      "commit_sha": "cf5c0288d526824aead1b24e977400f13c527927",
+      "evidence_kind": "declared",
+      "summary": "Workspace membership explicitly includes packages, playgrounds, package tests, and docs, with workspace overrides and dependency trust controls."
+    },
+    {
+      "document_id": "vite-ci",
+      "repository": "vitejs/vite",
+      "category": "ci",
+      "path": ".github/workflows/ci.yml",
+      "source_url": "https://github.com/vitejs/vite/blob/cf5c0288d526824aead1b24e977400f13c527927/.github/workflows/ci.yml",
+      "fetch_url": "https://raw.githubusercontent.com/vitejs/vite/cf5c0288d526824aead1b24e977400f13c527927/.github/workflows/ci.yml",
+      "commit_sha": "cf5c0288d526824aead1b24e977400f13c527927",
+      "evidence_kind": "declared",
+      "summary": "CI skips unaffected documentation-only changes where possible, then runs builds, unit tests, serve tests, bundled-serve tests, build tests, lint, formatting, typecheck, and docs tests across Node versions and operating systems."
+    },
+    {
+      "document_id": "ruff-contribution",
+      "repository": "astral-sh/ruff",
+      "category": "contribution",
+      "path": "CONTRIBUTING.md",
+      "source_url": "https://github.com/astral-sh/ruff/blob/a4e7c20ca0d42f5cb41485210193548b98ee39c2/CONTRIBUTING.md",
+      "fetch_url": "https://raw.githubusercontent.com/astral-sh/ruff/a4e7c20ca0d42f5cb41485210193548b98ee39c2/CONTRIBUTING.md",
+      "commit_sha": "a4e7c20ca0d42f5cb41485210193548b98ee39c2",
+      "evidence_kind": "declared",
+      "summary": "Good-first-issue and help-wanted labels mark contribution paths; needs-design and needs-decision issues require discussion, and duplicate work should be checked first."
+    },
+    {
+      "document_id": "ruff-structure",
+      "repository": "astral-sh/ruff",
+      "category": "structure",
+      "path": "Cargo.toml",
+      "source_url": "https://github.com/astral-sh/ruff/blob/a4e7c20ca0d42f5cb41485210193548b98ee39c2/Cargo.toml",
+      "fetch_url": "https://raw.githubusercontent.com/astral-sh/ruff/a4e7c20ca0d42f5cb41485210193548b98ee39c2/Cargo.toml",
+      "commit_sha": "a4e7c20ca0d42f5cb41485210193548b98ee39c2",
+      "evidence_kind": "declared",
+      "summary": "The workspace contains crates/* with shared package metadata and explicit path dependencies, making the crate boundary the first place to locate a change."
+    },
+    {
+      "document_id": "ruff-ci",
+      "repository": "astral-sh/ruff",
+      "category": "ci",
+      "path": ".github/workflows/ci.yaml",
+      "source_url": "https://github.com/astral-sh/ruff/blob/a4e7c20ca0d42f5cb41485210193548b98ee39c2/.github/workflows/ci.yaml",
+      "fetch_url": "https://raw.githubusercontent.com/astral-sh/ruff/a4e7c20ca0d42f5cb41485210193548b98ee39c2/.github/workflows/ci.yaml",
+      "commit_sha": "a4e7c20ca0d42f5cb41485210193548b98ee39c2",
+      "evidence_kind": "declared",
+      "summary": "CI computes affected areas from the merge base and runs locked Rust/Python checks with component-specific jobs, including release-input detection."
+    },
+    {
+      "document_id": "ruff-release",
+      "repository": "astral-sh/ruff",
+      "category": "release",
+      "path": "scripts/release.sh",
+      "source_url": "https://github.com/astral-sh/ruff/blob/a4e7c20ca0d42f5cb41485210193548b98ee39c2/scripts/release.sh",
+      "fetch_url": "https://raw.githubusercontent.com/astral-sh/ruff/a4e7c20ca0d42f5cb41485210193548b98ee39c2/scripts/release.sh",
+      "commit_sha": "a4e7c20ca0d42f5cb41485210193548b98ee39c2",
+      "evidence_kind": "declared",
+      "summary": "The release script updates versions, changelog, crate READMEs, lockfiles, and crates.io policy checks before a release workflow proceeds."
+    },
+    {
+      "document_id": "awesome-contribution",
+      "repository": "sindresorhus/awesome",
+      "category": "contribution",
+      "path": "contributing.md",
+      "source_url": "https://github.com/sindresorhus/awesome/blob/bc98e517ddca672f55f9857d714fc3ea3c3540b2/contributing.md",
+      "fetch_url": "https://raw.githubusercontent.com/sindresorhus/awesome/bc98e517ddca672f55f9857d714fc3ea3c3540b2/contributing.md",
+      "commit_sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2",
+      "evidence_kind": "declared",
+      "summary": "The guide separates adding a list from adding an entry and walks a newcomer through the in-browser edit and pull-request path."
+    },
+    {
+      "document_id": "awesome-template",
+      "repository": "sindresorhus/awesome",
+      "category": "contribution",
+      "path": "pull_request_template.md",
+      "source_url": "https://github.com/sindresorhus/awesome/blob/bc98e517ddca672f55f9857d714fc3ea3c3540b2/pull_request_template.md",
+      "fetch_url": "https://raw.githubusercontent.com/sindresorhus/awesome/bc98e517ddca672f55f9857d714fc3ea3c3540b2/pull_request_template.md",
+      "commit_sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2",
+      "evidence_kind": "declared",
+      "summary": "The checklist requires a ready PR, peer review of four open PRs, a title and description format, an ordered entry, a lowercase slug, and awesome-lint."
+    },
+    {
+      "document_id": "awesome-ci",
+      "repository": "sindresorhus/awesome",
+      "category": "ci",
+      "path": ".github/workflows/main.yml",
+      "source_url": "https://github.com/sindresorhus/awesome/blob/bc98e517ddca672f55f9857d714fc3ea3c3540b2/.github/workflows/main.yml",
+      "fetch_url": "https://raw.githubusercontent.com/sindresorhus/awesome/bc98e517ddca672f55f9857d714fc3ea3c3540b2/.github/workflows/main.yml",
+      "commit_sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2",
+      "evidence_kind": "declared",
+      "summary": "Pull requests targeting main and changing readme.md run the repository linter workflow."
+    },
+    {
+      "document_id": "awesome-linter",
+      "repository": "sindresorhus/awesome",
+      "category": "ci",
+      "path": ".github/workflows/repo_linter.sh",
+      "source_url": "https://github.com/sindresorhus/awesome/blob/bc98e517ddca672f55f9857d714fc3ea3c3540b2/.github/workflows/repo_linter.sh",
+      "fetch_url": "https://raw.githubusercontent.com/sindresorhus/awesome/bc98e517ddca672f55f9857d714fc3ea3c3540b2/.github/workflows/repo_linter.sh",
+      "commit_sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2",
+      "evidence_kind": "declared",
+      "summary": "The linter extracts newly added #readme links, clones the linked repository, and runs awesome-lint; with no new link it exits quietly."
+    }
+  ],
+  "procedure_cards": [
+    {
+      "card_id": "map-before-moving",
+      "title": "Map the repository before moving files",
+      "applies_when": ["The project has multiple packages, crates, playgrounds, or generated outputs."],
+      "counterexamples": ["A one-file script with no separate build or test boundary does not need a monorepo map."],
+      "procedure": ["Read the root manifest/workspace file and the project layout guide.", "Locate the public entry point, the nearest tests, and the source of generated files before editing.", "Keep a change inside the narrowest package or crate that owns the behavior."],
+      "verification": ["The changed path is named by the repository's layout or manifest.", "The focused test or build command runs from the documented root."],
+      "recovery": ["If the map conflicts with the tree, stop moving files, record the mismatch, and follow the live manifest while asking the maintainer which source is authoritative."],
+      "evidence_refs": ["cli-structure", "fastapi-packaging", "vite-workspace", "ruff-structure"],
+      "status": "candidate"
+    },
+    {
+      "card_id": "check-contribution-gate",
+      "title": "Check the contribution gate before coding",
+      "applies_when": ["You are preparing an external issue, feature, or pull request."],
+      "counterexamples": ["A private maintenance task with an assigned owner may use its internal process instead of public labels."],
+      "procedure": ["Search for duplicate issues and linked pull requests.", "Read the issue labels and acceptance criteria before opening a branch.", "For a feature or design without the required signal, discuss the proposal first and keep the patch out of the PR."],
+      "verification": ["The PR links the issue, stays within its acceptance criteria, and includes the requested tests."],
+      "recovery": ["If criteria are missing or the issue is marked core, needs-design, or needs-decision, stop the implementation path and ask for clarification or maintainer direction."],
+      "evidence_refs": ["cli-contribution", "vite-contribution", "ruff-contribution"],
+      "status": "candidate"
+    },
+    {
+      "card_id": "derive-checks-from-ci",
+      "title": "Derive local checks from CI",
+      "applies_when": ["The repository has a workflow that names runtimes, path filters, or focused jobs."],
+      "counterexamples": ["A green local command does not prove a remote deployment, protected branch, or secret-backed job succeeded."],
+      "procedure": ["Read the workflow's trigger and path filters.", "Run the smallest local matrix that covers the changed area, then run the repository's named formatter, typecheck, test, and build commands.", "Record commands and environment versions in the PR or handoff."],
+      "verification": ["Every changed component maps to at least one local check and the commands exit successfully.", "Any skipped matrix dimension is named rather than implied to have passed."],
+      "recovery": ["If a local dependency or OS is unavailable, preserve the failure output, run the closest supported check, and mark the missing CI dimension unverified."],
+      "evidence_refs": ["cli-ci", "fastapi-ci", "vite-ci", "ruff-ci", "awesome-ci"],
+      "status": "candidate"
+    },
+    {
+      "card_id": "rehearse-release",
+      "title": "Rehearse a release before publishing",
+      "applies_when": ["A change is ready for packaging, tagging, or a production release."],
+      "counterexamples": ["A local dry run is not permission to create a tag, publish a package, or deploy an artifact."],
+      "procedure": ["Read the release document and identify the approval or environment gate.", "Prepare the version, changelog, generated files, and lockfiles as separate reviewable steps.", "Use the project's staging or local mode before invoking any publishing workflow."],
+      "verification": ["The local artifact, changelog, version, and target commit agree.", "The published package, tag, or release is checked only after the workflow reports success."],
+      "recovery": ["If preparation fails before publication, fix and rerun the preparation. If an immutable package was published but tagging failed, confirm package state before retrying any release step."],
+      "evidence_refs": ["cli-release", "fastapi-release", "fastapi-release-notes", "ruff-release", "vite-contribution"],
+      "status": "candidate"
+    },
+    {
+      "card_id": "regenerate-and-review",
+      "title": "Regenerate outputs from their source",
+      "applies_when": ["The project documents generated manuals, schemas, changelogs, snapshots, or crate/package metadata."],
+      "counterexamples": ["A hand-written README or a one-off text file is not automatically a generated artifact."],
+      "procedure": ["Find the generator command in the contribution or release guide.", "Edit the source file or implementation first, run the generator, then inspect the generated diff.", "Run the focused tests and keep generated changes in the same reviewable scope."],
+      "verification": ["A clean regeneration produces no unexpected diff and the focused tests cover the changed output."],
+      "recovery": ["If generated output is edited directly or snapshots drift, discard the generated-only change, rerun the documented generator, and review the result instead of accepting every snapshot blindly."],
+      "evidence_refs": ["cli-structure", "cli-release", "ruff-release", "ruff-contribution"],
+      "status": "candidate"
+    },
+    {
+      "card_id": "curated-list-checklist",
+      "title": "Treat a curated list as a content contribution",
+      "applies_when": ["The repository is a curated Markdown list or resource index."],
+      "counterexamples": ["The Awesome checklist does not define a general software-library release process or a substitute for application tests."],
+      "procedure": ["Use the contribution template before editing the list.", "Check title case, lowercase slug, succinct objective description, category placement, and #readme URL.", "Run the repository linter and verify that the linked project is real and appropriate."],
+      "verification": ["The PR checklist is complete, the new entry is in the right category, and awesome-lint passes."],
+      "recovery": ["If the linter clones a broken link or the entry fails a checklist rule, fix the link/content and rerun the linter; do not broaden the PR to unrelated cleanup."],
+      "evidence_refs": ["awesome-contribution", "awesome-template", "awesome-ci", "awesome-linter"],
+      "status": "candidate"
+    }
+  ]
+}

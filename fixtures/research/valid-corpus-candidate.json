@@ -1,0 +1,29 @@
+{
+  "record_type": "corpus_candidate",
+  "repository": {
+    "full_name": "example/maintainable-tool",
+    "html_url": "https://github.com/example/maintainable-tool",
+    "visibility": "public",
+    "default_branch": "main",
+    "is_fork": false,
+    "is_archived": false,
+    "language": "Python",
+    "topics": ["cli", "documentation"],
+    "stars": 12000,
+    "forks": 900
+  },
+  "snapshot": {
+    "captured_at": "2026-09-30T12:00:00Z",
+    "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+    "source": "github_rest"
+  },
+  "sampling": {
+    "strata": ["python", "cli", "stars:10k-100k", "active"],
+    "source_query": "stars:10000..99999 language:Python topic:cli pushed:2024-01-01..*",
+    "seed": 42
+  },
+  "eligibility": {
+    "status": "included",
+    "reasons": ["public", "not archived", "has README and workflow evidence"]
+  }
+}

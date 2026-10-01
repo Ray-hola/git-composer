@@ -1,0 +1,31 @@
+version: 1
+candidate_target_default: 10000
+
+# These weights are retrieval/ranking inputs, not a claim that stars equal quality.
+weights:
+  adoption: 0.10
+  documentation: 0.20
+  maintenance: 0.15
+  governance: 0.15
+  automation: 0.15
+  reproducibility: 0.15
+  diversity: 0.10
+
+# Shares must sum to 1.0. The 10k+ target means candidate records; the first
+# two partitions are the separate >=10k-star adoption strata.
+partitions:
+  - id: stars_100k_plus
+    share: 0.05
+    qualifiers: ["stars:100000..*"]
+  - id: stars_10k_100k
+    share: 0.15
+    qualifiers: ["stars:10000..99999"]
+  - id: stars_1k_10k
+    share: 0.30
+    qualifiers: ["stars:1000..9999"]
+  - id: stars_100_1k
+    share: 0.30
+    qualifiers: ["stars:100..999"]
+  - id: stars_0_100
+    share: 0.20
+    qualifiers: ["stars:0..99"]

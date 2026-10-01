@@ -1,0 +1,105 @@
+{
+  "auth_mode": "anonymous",
+  "build_corpus_cli": {
+    "exit_code": 1,
+    "status": "failed",
+    "stderr_tail": " result = func(*args)\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py\", line 1389, in https_open\n    return self.do_open(http.client.HTTPSConnection, req,\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py\", line 1349, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  "conditional_get": {
+    "attempted": true,
+    "etag_observed": false
+  },
+  "deterministic_manifest": {
+    "passed": false,
+    "record_count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "purpose": "public repository metadata",
+      "url": "https://api.github.com/repos/cli/cli"
+    },
+    {
+      "method": "GET",
+      "purpose": "public repository metadata",
+      "url": "https://api.github.com/repos/vitejs/vite"
+    },
+    {
+      "method": "GET",
+      "purpose": "public repository metadata",
+      "url": "https://api.github.com/repos/fastapi/fastapi"
+    },
+    {
+      "method": "GET",
+      "purpose": "public repository metadata",
+      "url": "https://api.github.com/repos/astral-sh/ruff"
+    },
+    {
+      "method": "GET",
+      "purpose": "public repository metadata",
+      "url": "https://api.github.com/repos/sindresorhus/awesome"
+    },
+    {
+      "method": "GET",
+      "purpose": "expected read-only 404 failure probe",
+      "url": "https://api.github.com/repos/cli/cli/does-not-exist"
+    }
+  ],
+  "errors": [
+    {
+      "kind": "URLError",
+      "repository": "cli/cli",
+      "status": null
+    },
+    {
+      "kind": "URLError",
+      "repository": "vitejs/vite",
+      "status": null
+    },
+    {
+      "kind": "URLError",
+      "repository": "fastapi/fastapi",
+      "status": null
+    },
+    {
+      "kind": "URLError",
+      "repository": "astral-sh/ruff",
+      "status": null
+    },
+    {
+      "kind": "URLError",
+      "repository": "sindresorhus/awesome",
+      "status": null
+    }
+  ],
+  "failure_probe": {
+    "error_type": "URLError",
+    "expected_status": 404,
+    "observed_status": null,
+    "passed": false
+  },
+  "metadata_records": [],
+  "network_opt_in": true,
+  "pagination": [],
+  "rate_budget": {
+    "limit": null,
+    "remaining": null,
+    "requests": 0,
+    "reset_epoch": null,
+    "search_requests": 0
+  },
+  "raw_content_ingested": false,
+  "raw_issue_or_comment_text_ingested": false,
+  "report_type": "github_api_metadata_smoke",
+  "repositories": [
+    "cli/cli",
+    "vitejs/vite",
+    "fastapi/fastapi",
+    "astral-sh/ruff",
+    "sindresorhus/awesome"
+  ],
+  "schema_version": 1,
+  "status": "failed",
+  "write_endpoints_used": false
+}

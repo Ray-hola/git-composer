@@ -1,0 +1,19 @@
+{
+  "fixture_type": "provenance_holdout",
+  "repository": "example/holdout-project",
+  "split": "holdout",
+  "holdout": {
+    "seed": 42,
+    "excluded_from_rule_fit": true,
+    "purpose": "test rule portability after distillation"
+  },
+  "provenance": {
+    "url": "https://github.com/example/holdout-project/blob/0123456789abcdef0123456789abcdef01234567/README.md",
+    "path": "README.md",
+    "commit_sha": "0123456789abcdef0123456789abcdef01234567",
+    "captured_at": "2026-09-30T12:00:00Z",
+    "content_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "source": "github_rest"
+  },
+  "raw_content_ingested": false
+}

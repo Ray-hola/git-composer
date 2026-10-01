@@ -1,0 +1,32 @@
+{
+  "record_type": "evidence_record",
+  "repository": {
+    "full_name": "example/bad-record",
+    "html_url": "https://github.com/example/bad-record",
+    "visibility": "public",
+    "default_branch": "main",
+    "is_fork": false,
+    "is_archived": false
+  },
+  "category": "readme",
+  "evidence_kind": "inferred",
+  "observation": "This record deliberately has invalid confidence and provenance.",
+  "provenance": {
+    "url": "https://github.com/example/bad-record/blob/main/README.md",
+    "path": "README.md",
+    "commit_sha": "short",
+    "retrieved_at": "2026-09-30T12:00:00Z",
+    "content_sha256": "not-a-sha"
+  },
+  "confidence": {
+    "score": 1.4,
+    "level": "high",
+    "basis": []
+  },
+  "safety": {
+    "side_effect_level": "read_only",
+    "confirmation_required": false,
+    "privacy_review": "pending",
+    "license_review": "pending"
+  }
+}

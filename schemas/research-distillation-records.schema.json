@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ray-hola.invalid/git-composer/research-distillation-records.schema.json",
+  "title": "Git Composer research and distillation records",
+  "description": "Machine-readable records for a read-only GitHub corpus and evidence-backed agent rules.",
+  "oneOf": [
+    { "$ref": "#/$defs/corpus_candidate" },
+    { "$ref": "#/$defs/evidence_record" },
+    { "$ref": "#/$defs/rule_candidate" }
+  ],
+  "$defs": {
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["score", "level", "basis"],
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "level": { "enum": ["low", "medium", "high"] },
+        "basis": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "path", "commit_sha", "retrieved_at", "content_sha256"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^https?://" },
+        "path": { "type": "string", "minLength": 1 },
+        "commit_sha": { "type": "string", "pattern": "^[0-9a-fA-F]{7,64}$" },
+        "retrieved_at": { "type": "string", "minLength": 1 },
+        "content_sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["side_effect_level", "confirmation_required", "privacy_review", "license_review"],
+      "properties": {
+        "side_effect_level": { "enum": ["read_only", "local_reversible", "local_destructive", "history_rewrite", "remote_write"] },
+        "confirmation_required": { "type": "boolean" },
+        "privacy_review": { "enum": ["not_applicable", "pending", "passed", "blocked"] },
+        "license_review": { "enum": ["not_applicable", "pending", "passed", "blocked"] }
+      }
+    },
+    "repository": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["full_name", "html_url", "visibility", "default_branch", "is_fork", "is_archived"],
+      "properties": {
+        "full_name": { "type": "string", "pattern": "^[^/\\s]+/[^/\\s]+$" },
+        "html_url": { "type": "string", "pattern": "^https://github\\.com/" },
+        "visibility": { "enum": ["public"] },
+        "default_branch": { "type": "string", "minLength": 1 },
+        "is_fork": { "type": "boolean" },
+        "is_archived": { "type": "boolean" },
+        "language": { "type": ["string", "null"] },
+        "topics": { "type": "array", "items": { "type": "string" } },
+        "stars": { "type": "integer", "minimum": 0 },
+        "forks": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["captured_at", "commit_sha", "source"],
+      "properties": {
+        "captured_at": { "type": "string", "minLength": 1 },
+        "commit_sha": { "type": "string", "pattern": "^[0-9a-fA-F]{7,64}$" },
+        "source": { "enum": ["github_rest", "github_graphql", "gharchive", "manual"] }
+      }
+    },
+    "corpus_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "repository", "snapshot", "sampling", "eligibility"],
+      "properties": {
+        "record_type": { "const": "corpus_candidate" },
+        "repository": { "$ref": "#/$defs/repository" },
+        "snapshot": { "$ref": "#/$defs/snapshot" },
+        "sampling": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["strata", "source_query", "seed"],
+          "properties": {
+            "strata": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+            "source_query": { "type": "string", "minLength": 1 },
+            "seed": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "eligibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "reasons"],
+          "properties": {
+            "status": { "enum": ["candidate", "included", "excluded", "needs_review"] },
+            "reasons": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "evidence_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "repository", "category", "evidence_kind", "observation", "provenance", "confidence", "safety"],
+      "properties": {
+        "record_type": { "const": "evidence_record" },
+        "repository": { "$ref": "#/$defs/repository" },
+        "category": { "enum": ["structure", "readme", "governance", "issues", "pull_requests", "automation", "release", "security", "testing", "support"] },
+        "evidence_kind": { "enum": ["declared", "observed", "inferred"] },
+        "observation": { "type": "string", "minLength": 1 },
+        "signals": { "type": "array", "items": { "type": "string" } },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "safety": { "$ref": "#/$defs/safety" }
+      }
+    },
+    "rule_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_type", "rule_id", "trigger", "applies_when", "do_not_apply_when", "facts_to_collect", "allowed_tools", "safety", "confirmation_gate", "procedure", "verification", "stop_conditions", "evidence_refs", "confidence", "status"],
+      "properties": {
+        "record_type": { "const": "rule_candidate" },
+        "rule_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]+$" },
+        "trigger": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "applies_when": { "type": "array", "items": { "type": "string" } },
+        "do_not_apply_when": { "type": "array", "items": { "type": "string" } },
+        "facts_to_collect": { "type": "array", "items": { "type": "string" } },
+        "allowed_tools": { "type": "array", "items": { "type": "string" } },
+        "safety": { "$ref": "#/$defs/safety" },
+        "confirmation_gate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["required", "when"],
+          "properties": {
+            "required": { "type": "boolean" },
+            "when": { "enum": ["never", "on_ambiguity", "before_local_write", "before_history_rewrite", "before_remote_write"] },
+            "question": { "type": "string" }
+          }
+        },
+        "procedure": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "verification": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "stop_conditions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "evidence_refs": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "exceptions": { "type": "array", "items": { "type": "string" } },
+        "status": { "enum": ["candidate", "approved", "rejected", "needs_review"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "record_type": "rule_candidate",
+  "rule_id": "remote-publish.unsafe-default",
+  "trigger": ["publish"],
+  "applies_when": ["the user mentions publishing"],
+  "do_not_apply_when": [],
+  "facts_to_collect": ["remote"],
+  "allowed_tools": ["git"],
+  "safety": {
+    "side_effect_level": "remote_write",
+    "confirmation_required": false,
+    "privacy_review": "pending",
+    "license_review": "pending"
+  },
+  "confirmation_gate": {
+    "required": false,
+    "when": "never"
+  },
+  "procedure": ["push"],
+  "verification": ["check exit code"],
+  "stop_conditions": ["unknown"],
+  "evidence_refs": ["evidence:missing"],
+  "confidence": {
+    "score": 0.3,
+    "level": "low",
+    "basis": ["single example"]
+  },
+  "status": "candidate"
+}

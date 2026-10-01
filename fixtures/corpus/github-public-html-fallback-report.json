@@ -1,0 +1,78 @@
+{
+  "report_type": "github_public_html_fallback",
+  "schema_version": 1,
+  "snapshot_date": "2026-09-30",
+  "snapshot_timezone": "UTC",
+  "snapshot_precision": "day",
+  "source": "webfetch",
+  "evidence_kind": "public_html",
+  "caveat": "HTML rounded displays are not API-equivalent and must not be interpreted as exact integer star counts.",
+  "no_claim_rule": "This report records only what the public repository page displayed. It makes no claim about an exact current star count, API metadata parity, or a threshold decision.",
+  "repositories": [
+    {
+      "repository": "cli/cli",
+      "source_url": "https://github.com/cli/cli",
+      "evidence_kind": "public_html",
+      "display_value": "46.5k",
+      "display_unit": "stars",
+      "default_branch": "trunk",
+      "visible_file_or_resource_evidence": [
+        {"label": "LICENSE", "visible": true},
+        {"label": "Contributing", "visible": true},
+        {"label": "Security", "visible": true}
+      ]
+    },
+    {
+      "repository": "vitejs/vite",
+      "source_url": "https://github.com/vitejs/vite",
+      "evidence_kind": "public_html",
+      "display_value": "83.1k",
+      "display_unit": "stars",
+      "default_branch": "main",
+      "visible_file_or_resource_evidence": [
+        {"label": "CONTRIBUTING.md", "visible": true},
+        {"label": "LICENSE", "visible": true},
+        {"label": ".github", "visible": true},
+        {"label": "CI link", "visible": true}
+      ]
+    },
+    {
+      "repository": "fastapi/fastapi",
+      "source_url": "https://github.com/fastapi/fastapi",
+      "evidence_kind": "public_html",
+      "display_value": "102.7k",
+      "display_unit": "stars",
+      "default_branch": "master",
+      "visible_file_or_resource_evidence": [
+        {"label": "LICENSE", "visible": true},
+        {"label": "Contributing", "visible": true},
+        {"label": "docs/en/docs/contributing.md", "visible": true}
+      ]
+    },
+    {
+      "repository": "astral-sh/ruff",
+      "source_url": "https://github.com/astral-sh/ruff",
+      "evidence_kind": "public_html",
+      "display_value": "49.9k",
+      "display_unit": "stars",
+      "default_branch": "main",
+      "visible_file_or_resource_evidence": [
+        {"label": "LICENSE", "visible": true},
+        {"label": "Contributing", "visible": true}
+      ]
+    },
+    {
+      "repository": "sindresorhus/awesome",
+      "source_url": "https://github.com/sindresorhus/awesome",
+      "evidence_kind": "public_html",
+      "display_value": "512.8k",
+      "display_unit": "stars",
+      "default_branch": "main",
+      "visible_file_or_resource_evidence": [
+        {"label": "license", "visible": true},
+        {"label": "contributing.md", "visible": true},
+        {"label": ".github/workflows", "visible": true}
+      ]
+    }
+  ]
+}
