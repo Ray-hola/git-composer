@@ -65,6 +65,34 @@ def validate_partition_fixture(plan_builder: Path) -> list[str]:
     return errors
 
 
+def validate_readme_contract() -> list[str]:
+    readme = ROOT / "README.md"
+    errors: list[str] = []
+    if not readme.is_file():
+        return ["README.md is missing"]
+    text = readme.read_text(encoding="utf-8")
+    required_fragments = {
+        "first_five_minutes": "5 分钟只读快速开始",
+        "expected_output": "预期结果",
+        "status_block": "状态：已完成 / 部分完成 / 被阻塞",
+        "evidence_labels": "未验证",
+        "rollback": "验证与回退",
+        "reporting_templates": "references/reporting-templates.md",
+        "maintenance_check": "scripts/evaluate_skill.py",
+        "remote_target": "https://github.com/Ray-Hola/git-composer.git",
+        "candidate_pending": "10,000 个候选项目目标仍为 pending",
+        "verified_count": "252 个去重文档",
+    }
+    for label, fragment in required_fragments.items():
+        if fragment not in text:
+            errors.append(f"README contract missing {label}: {fragment}")
+    batch4 = load_json(FIXTURE_DIR / "github-public-doc-evidence-batch-4.json")
+    cumulative = batch4.get("cumulative_progress", {}).get("cumulative_verified_unique_documents")
+    if cumulative != 252:
+        errors.append(f"batch-4 cumulative verified count changed: {cumulative!r}")
+    return errors
+
+
 def validate_holdout_fixture() -> list[str]:
     fixture = load_json(FIXTURE_DIR / "provenance-holdout.json")
     errors: list[str] = []
@@ -110,6 +138,8 @@ def main() -> int:
     checks.append({"name": "partition_fixture", "status": "passed" if not partition_errors else "failed", "errors": partition_errors})
     holdout_errors = validate_holdout_fixture()
     checks.append({"name": "provenance_holdout_fixture", "status": "passed" if not holdout_errors else "failed", "errors": holdout_errors})
+    readme_errors = validate_readme_contract()
+    checks.append({"name": "readme_contract", "status": "passed" if not readme_errors else "failed", "errors": readme_errors})
 
     failed = [check for check in checks if check.get("status") == "failed"]
     report = {

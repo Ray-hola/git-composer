@@ -1,4 +1,4 @@
 interface:
   display_name: "Git Composer"
   short_description: "中英文仓库管理、提交说明、README 设计与安全发布验证"
-  default_prompt: "使用 $git-composer，按用户和仓库的语言惯例管理目录、提交说明、README 与发布，并用实际证据验证结果。"
+  default_prompt: "使用 $git-composer，按用户和仓库的语言惯例管理目录、提交说明、README 与发布，并用实际证据验证结果；按状态模板说明变更、进度、测试、风险、回滚和下一步。"

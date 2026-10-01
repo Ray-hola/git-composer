@@ -22,10 +22,12 @@ def main() -> int:
     failures: list[str] = []
 
     skill_md = root / "SKILL.md"
+    readme = root / "README.md"
     ui_yaml = root / "agents" / "openai.yaml"
     references = root / "references"
+    reporting = references / "reporting-templates.md"
 
-    for path in (skill_md, ui_yaml, references):
+    for path in (skill_md, readme, ui_yaml, references, reporting):
         if not path.exists():
             fail(f"missing required path: {path.relative_to(root)}", failures)
 
@@ -48,6 +50,31 @@ def main() -> int:
         for reference in sorted(set(re.findall(r"references/[A-Za-z0-9_.-]+\.md", content))):
             if not (root / reference).is_file():
                 fail(f"broken SKILL.md reference: {reference}", failures)
+
+    if readme.exists():
+        readme_text = readme.read_text(encoding="utf-8")
+        required_sections = ("5 分钟只读快速开始", "5 分钟安装与第一次改动", "任务菜单", "安全边界", "研究计数", "精确维护检查")
+        for section in required_sections:
+            if section not in readme_text:
+                fail(f"README.md is missing required novice section: {section}", failures)
+        for phrase in ("252 个去重文档", "10,000 个候选项目目标仍为 pending", "--ff-only", "未验证"):
+            if phrase not in readme_text:
+                fail(f"README.md is missing evidence or safety phrase: {phrase}", failures)
+        for link in (
+            "references/git-workflows.md",
+            "references/readme-design.md",
+            "references/research-and-distillation.md",
+            "references/reporting-templates.md",
+            "fixtures/corpus/github-public-doc-evidence-batch-4.json",
+        ):
+            if link not in readme_text:
+                fail(f"README.md is missing deep link: {link}", failures)
+
+    if reporting.exists():
+        reporting_text = reporting.read_text(encoding="utf-8")
+        for field in ("状态", "范围", "改动", "验证", "证据", "风险与恢复", "未知", "下一步", "进度消息", "最终交付块"):
+            if field not in reporting_text:
+                fail(f"reporting-templates.md is missing field or section: {field}", failures)
 
     if ui_yaml.exists():
         ui = ui_yaml.read_text(encoding="utf-8")

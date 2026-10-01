@@ -72,3 +72,11 @@ GH Archive 或类似事件数据可补充活动、Issue、PR 和发布时间序�
 本批不是把探测数当成阅读数：130 个 URL 探测中只有 100 个成功且去重的文档计入，30 个失败或不可用路径被排除；54 个小于等于 200 行的读取标为 `full`，46 个较大文件标为 `partial`。webfetch 没有提供可验证的内容哈希，因此每条记录都写明 `content_hash_status=not_exposed_by_webfetch`；分支 URL 也没有冒充固定提交。累计已验证去重文档为 152（前两批 52 + 本批 100），10,000 个实际文档/项目目标仍为 `pending`，搜索命中、元数据和文档片段均不替代该目标。
 
 第三批支持对已有流程卡作三处具体增强：先从 `pyproject.toml`、`Cargo.toml`、`go.mod` 或 `package.json` 确认 workspace/package 边界；将 workflow、Makefile、tox、pytest 或矩阵配置映射到改动路径并记录未覆盖维度；发布前检查 Towncrier/CHANGELOG 等版本输入和生成链。它也提供反例：根 README 可能明确说明某个 monorepo 不是可复用库，路径过滤可能跳过文档改动，工作流可能只是包装器而非 job 真正来源。长文档的结论保留为 `partial` 观察，不能声称已读完整历史。
+
+## 第四批 100 个文档：截至 2026-10-01 的累计状态
+
+第四批在 2026-10-01 UTC 通过 public raw GitHub webfetch 读取了 28 个项目的 100 个去重一手文档，覆盖较小的成熟库、CLI 和 monorepo。147 次 URL 尝试中 100 次成功且计入，47 个失败或不可用路径保留在失败清单；52 次读取不超过 200 行而标为 `full`，48 次标为 `partial`。机器可读报告见 [`fixtures/corpus/github-public-doc-evidence-batch-4.json`](../fixtures/corpus/github-public-doc-evidence-batch-4.json)，四张候选流程卡也只引用本批文档。
+
+本批和前三批合计 **252 个去重文档**（22 + 30 + 100 + 100），这是已验证的文档读取数，不是候选项目数，也不是完整阅读的项目数。raw webfetch 没有暴露可验证的固定 commit SHA 或内容哈希，因此 100 条记录保留 `not_obtainable_from_public_html` / `not_exposed_by_webfetch`；分支 URL、页面星标或元数据不能替代固定快照。
+
+`target.candidate_projects=10000` 且 `target.status=pending` 继续有效。不要把 252 个文档、28 条元数据记录、147 次 URL 尝试或搜索命中写成“已读取 10,000 个项目”。当前规则仍是候选，除非在更广的分层样本和金标准/留出集复核中重复出现。
