@@ -1,0 +1,7 @@
+{
+  "name": "release-prep",
+  "classification": ["observe", "plan", "local_write", "release"],
+  "initial_questions": ["Which license, version, and publish target?"],
+  "status_before_answer": "WAITING FOR ANSWER",
+  "confirmation_status": "CONFIRMATION REQUIRED"
+}

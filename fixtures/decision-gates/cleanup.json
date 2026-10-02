@@ -1,0 +1,7 @@
+{
+  "name": "cleanup",
+  "classification": ["observe", "local_write"],
+  "initial_questions": ["Which paths are in scope?", "Should the cleanup remain uncommitted?"],
+  "status_before_answer": "WAITING FOR ANSWER",
+  "side_effect": "worktree only"
+}

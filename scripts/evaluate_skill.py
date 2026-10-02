@@ -119,6 +119,7 @@ def main() -> int:
     checks.append(run_check([sys.executable, str(SCRIPTS / "test_evidence_batch_two.py")]))
     checks.append(run_check([sys.executable, str(SCRIPTS / "test_evidence_batch_three.py")]))
     checks.append(run_check([sys.executable, str(SCRIPTS / "test_evidence_batch_four.py")]))
+    checks.append(run_check([sys.executable, str(SCRIPTS / "test_decision_gates.py")]))
 
     plan_command = [sys.executable, str(SCRIPTS / "build_corpus.py"), "--candidate-target", "10000", "--seed", "42"]
     first = subprocess.run(plan_command, cwd=ROOT, capture_output=True, text=True, check=False)

@@ -8,6 +8,7 @@ Use this page as the compact map from a user question to the maintained guidance
 | Governance | [governance-and-docs.md](governance-and-docs.md) | You need contribution, ownership, or maintenance notes. |
 | README design | [readme-design.md](readme-design.md) | You are improving the GitHub landing page or its visual hierarchy. |
 | Git operations | [git-workflows.md](git-workflows.md) | You are preparing a branch, commit, sync, merge, or recovery action. |
+| Decision gates | [decision-gates.md](decision-gates.md) | A Git request may write locally, change history, touch a remote, release, or research mature repositories. |
 | Research | [research-and-distillation.md](research-and-distillation.md) | You are collecting public evidence or converting it into rules. |
 | Procedure cards | [procedure-cards.md](procedure-cards.md) | You need an executable, evidence-backed workflow with stop conditions. |
 | Repository standards | [repository-standards.md](repository-standards.md) | You are choosing the smallest useful quality and maintenance gate. |

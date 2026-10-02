@@ -51,6 +51,7 @@ Expected output: a status block with scope, files, commands and exit results, ev
 | Define maintainable rules and docs | [Governance & docs](references/governance-and-docs.md) |
 | Design a useful README | [README design](references/readme-design.md) |
 | Handle branches, commits, sync, and recovery | [Git workflows](references/git-workflows.md) |
+| Gate Git writes, remotes, releases, and research | [Decision gates](references/decision-gates.md) |
 | Turn research into reusable rules | [Research & distillation](references/research-and-distillation.md) |
 | Convert evidence into a procedure | [Procedure cards](references/procedure-cards.md) |
 | Check metadata, badges, and license facts | [Metadata & badges](references/metadata-and-badges.md) |
@@ -76,6 +77,7 @@ python3 scripts/test_evidence_batch.py
 python3 scripts/test_evidence_batch_two.py
 python3 scripts/test_evidence_batch_three.py
 python3 scripts/test_evidence_batch_four.py
+python3 scripts/test_decision_gates.py
 python3 scripts/evaluate_skill.py
 ```
 

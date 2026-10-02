@@ -15,6 +15,8 @@ description: "面向编程新手的仓库管理技能：规划目录结构、治
 
 ## 选择本次工作方式
 
+涉及分支、提交、上传、发布、清理或成熟仓库研究时，先读取 [Git-only decision gates](references/decision-gates.md)。先快照根目录、分支/HEAD、状态和远端，再将请求分类为 `observe`、`plan`、`local_write`、`commit`、`remote_write`、`release` 或 `research`；只按依赖顺序询问会改变动作的未决问题，首轮最多 1–3 个。P0 在写入前确认目标/范围/副作用，法律或发布前再确认许可证/版本/发布目标；P1 再确认语言/受众、验证与回退。报告状态只使用 READY、WAITING FOR ANSWER、CONFIRMATION REQUIRED、BLOCKED、COMPLETE，并按 Status → Changed → Why/evidence → Verification（local/CI/remote/release）→ Risk & rollback → Unknowns/blocked choice → Next question 输出。不要猜 `origin`、`main`、可见性或权限；越界请求停止。
+
 - **体检**：“看看哪里有问题”“先给建议”——只读检查，给有证据的优先事项。
 - **起步与规范**：“从零搭建仓库”“目录怎么分”“该写哪些说明”——读取 [项目结构指南](references/project-structure.md) 和 [治理与说明文件指南](references/governance-and-docs.md)，先形成适合当前阶段的结构、规则和文件选择。请求方案时交付方案；请求搭建时继续落实文件。
 - **整理**：“帮我变专业”“整理这个仓库”——检查后直接完成范围内的本地改动、验证与说明，不停在建议清单。

@@ -1,0 +1,7 @@
+{
+  "name": "github-upload",
+  "classification": ["observe", "commit", "remote_write"],
+  "initial_questions": ["Which exact repository and target branch?", "Which paths and history are in scope?", "Should the commit and push be authorized?"],
+  "status_before_answer": "WAITING FOR ANSWER",
+  "forbidden_inferences": ["origin", "main", "public"]
+}

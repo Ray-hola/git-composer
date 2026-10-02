@@ -1,0 +1,10 @@
+{
+  "name": "mature-repository-research",
+  "classification": ["observe", "research"],
+  "initial_questions": [],
+  "status_before_answer": "READY",
+  "verified_documents": 252,
+  "candidate_projects": 10000,
+  "candidate_projects_status": "pending",
+  "remote_writes": false
+}
