@@ -80,12 +80,19 @@ def validate_readme_contract() -> list[str]:
         "reporting_templates": "references/reporting-templates.md",
         "maintenance_check": "scripts/evaluate_skill.py",
         "remote_target": "https://github.com/Ray-Hola/git-composer.git",
-        "candidate_pending": "10,000 个候选项目目标仍为 pending",
         "verified_count": "252 个去重文档",
     }
     for label, fragment in required_fragments.items():
         if fragment not in text:
             errors.append(f"README contract missing {label}: {fragment}")
+    research_reference = ROOT / "references" / "research-and-distillation.md"
+    if not research_reference.is_file():
+        errors.append("research reference is missing")
+    else:
+        research_text = research_reference.read_text(encoding="utf-8")
+        for fragment in ("target.candidate_projects=10000", "target.status=pending"):
+            if fragment not in research_text:
+                errors.append(f"research reference missing internal fact: {fragment}")
     batch4 = load_json(FIXTURE_DIR / "github-public-doc-evidence-batch-4.json")
     cumulative = batch4.get("cumulative_progress", {}).get("cumulative_verified_unique_documents")
     if cumulative != 252:

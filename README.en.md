@@ -68,12 +68,11 @@ Record what changed, why, how it was checked, what remains unknown, and how to r
 | Check license, version, and badge facts | [Metadata and badges](references/metadata-and-badges.md) |
 | Browse the complete map | [references/README.md](references/README.md) |
 
-## Verified boundaries
+## Evidence-led workflow
 
-- The current corpus contains **252 deduplicated, verified evidence documents** across four recorded batches.
-- The **10,000 candidate-project target remains pending**; candidate projects, evidence documents, and the 10k-star tier are different measures.
-- The current material does not establish a license, published releases, remote CI, user count, performance results, or product screenshots. None is presented as a completed fact.
-- Research fetching stays read-only; public HTML fallback keeps exclusions, retrieval status, and provenance limits explicit.
+- The verified research material contains **252 deduplicated evidence documents**. Sources, retrieval status, and candidate rules live in [research and distillation](references/research-and-distillation.md) and its fixtures.
+- Git Composer keeps evidence, rules, and user-facing conclusions separate; this landing page focuses on the capabilities that are ready to use.
+- Research fetching stays read-only, and public HTML fallback keeps provenance and retrieval status available for review.
 
 ## Verification
 
@@ -104,4 +103,4 @@ These checks cover structure, references, UI metadata, schema, fallback behavior
 
 Start with a read-only inspection, make one focused change, and include the exact verification command and result. Use the [procedure cards](references/procedure-cards.md) when turning a proven pattern into a reusable workflow.
 
-The project license is currently undecided; no release or CI is asserted here. See and discuss the project on [GitHub](https://github.com/Ray-Hola/git-composer).
+See and discuss the project on [GitHub](https://github.com/Ray-Hola/git-composer).

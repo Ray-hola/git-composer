@@ -68,12 +68,11 @@ git log -1 --format='%h %s%n%b'
 | 检查许可证、版本和徽章事实 | [元数据与徽章](references/metadata-and-badges.md) |
 | 查看完整索引 | [references/README.md](references/README.md) |
 
-## 已核实的边界
+## 证据驱动的工作方式
 
-- 目前有 **252 个去重文档**（已核实为证据文档），分布在四批记录中。
-- **10,000 个候选项目目标仍为 pending**；候选项目数、证据文档数和 10k-star 分层不是同一个指标。
-- 当前材料没有证明许可证、已发布版本、远端 CI、用户数、性能结果或产品截图；这些内容不会被写成已完成事实。
-- 研究抓取保持只读；公开 HTML fallback 会保留排除路径、读取状态和溯源限制。
+- 已核实的研究材料包含 **252 个去重证据文档**，来源、读取状态和规则候选都保存在[研究与规则蒸馏](references/research-and-distillation.md)及其 fixture 中。
+- Git Composer 把证据、规则和用户可见结论分开保存；主页只展示已经成立的使用路径。
+- 研究抓取保持只读，公开 HTML fallback 会保留来源和读取状态，方便继续复核。
 
 ## 验证
 
@@ -104,7 +103,7 @@ python3 scripts/evaluate_skill.py
 
 先只读检查，再做一个范围清楚的改动，并附上准确的验证命令和结果。将成熟做法沉淀为流程时，使用[流程卡](references/procedure-cards.md)。
 
-项目许可证目前尚未决定；这里不宣称已有 release 或 CI。欢迎通过 [GitHub 仓库](https://github.com/Ray-Hola/git-composer)查看和讨论。
+欢迎通过 [GitHub 仓库](https://github.com/Ray-Hola/git-composer)查看和讨论。
 
 <details>
 <summary>维护者参考</summary>
@@ -140,7 +139,7 @@ git -C ~/.codex/skills/git-composer pull --ff-only
 
 ## 研究计数
 
-本地已核实语料是 **252 个去重文档**；**10,000 个候选项目目标仍为 pending**。候选项目数、文档数和 10k-star 分层不能互换。第四批记录见 [`fixtures/corpus/github-public-doc-evidence-batch-4.json`](fixtures/corpus/github-public-doc-evidence-batch-4.json)。
+本地已核实语料是 **252 个去重文档**。候选范围、采样口径和第四批记录见 [`references/research-and-distillation.md`](references/research-and-distillation.md) 与 [`fixtures/corpus/github-public-doc-evidence-batch-4.json`](fixtures/corpus/github-public-doc-evidence-batch-4.json)。
 
 ## 精确维护检查
 

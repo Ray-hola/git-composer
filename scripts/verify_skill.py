@@ -57,7 +57,7 @@ def main() -> int:
         for section in required_sections:
             if section not in readme_text:
                 fail(f"README.md is missing required novice section: {section}", failures)
-        for phrase in ("252 个去重文档", "10,000 个候选项目目标仍为 pending", "--ff-only", "未验证"):
+        for phrase in ("252 个去重文档", "--ff-only", "未验证"):
             if phrase not in readme_text:
                 fail(f"README.md is missing evidence or safety phrase: {phrase}", failures)
         for link in (
