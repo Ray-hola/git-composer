@@ -1,0 +1,34 @@
+{
+  "name": "grilling-closure",
+  "classification": ["observe", "plan", "local_write", "commit"],
+  "cases": [
+    {
+      "name": "unanswered_frontier",
+      "frontier_closed": false,
+      "shared_understanding_confirmed": false,
+      "verification_passed": false,
+      "commit_allowed": false
+    },
+    {
+      "name": "summary_not_confirmed",
+      "frontier_closed": true,
+      "shared_understanding_confirmed": false,
+      "verification_passed": true,
+      "commit_allowed": false
+    },
+    {
+      "name": "verification_failed",
+      "frontier_closed": true,
+      "shared_understanding_confirmed": true,
+      "verification_passed": false,
+      "commit_allowed": false
+    },
+    {
+      "name": "all_gates_closed",
+      "frontier_closed": true,
+      "shared_understanding_confirmed": true,
+      "verification_passed": true,
+      "commit_allowed": true
+    }
+  ]
+}

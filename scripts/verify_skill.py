@@ -23,11 +23,13 @@ def main() -> int:
 
     skill_md = root / "SKILL.md"
     readme = root / "README.md"
+    english_readme = root / "README.en.md"
+    license_file = root / "LICENSE"
     ui_yaml = root / "agents" / "openai.yaml"
     references = root / "references"
     reporting = references / "reporting-templates.md"
 
-    for path in (skill_md, readme, ui_yaml, references, reporting):
+    for path in (skill_md, readme, english_readme, license_file, ui_yaml, references, reporting):
         if not path.exists():
             fail(f"missing required path: {path.relative_to(root)}", failures)
 
@@ -53,11 +55,11 @@ def main() -> int:
 
     if readme.exists():
         readme_text = readme.read_text(encoding="utf-8")
-        required_sections = ("5 分钟只读快速开始", "5 分钟安装与第一次改动", "任务菜单", "安全边界", "研究计数", "精确维护检查")
+        required_sections = ("在 Codex 中开始", "第一次成功的判据", "你可以直接这样说", "安全与恢复", "证据与边界", "维护者参考")
         for section in required_sections:
             if section not in readme_text:
                 fail(f"README.md is missing required novice section: {section}", failures)
-        for phrase in ("252 个去重文档", "--ff-only", "未验证"):
+        for phrase in ("252 个去重证据文档", "--ff-only", "未验证", "不需要终端或 Git", "READY / WAITING FOR ANSWER / CONFIRMATION REQUIRED / BLOCKED / COMPLETE", "references/codex-onboarding.md"):
             if phrase not in readme_text:
                 fail(f"README.md is missing evidence or safety phrase: {phrase}", failures)
         for link in (
@@ -69,6 +71,21 @@ def main() -> int:
         ):
             if link not in readme_text:
                 fail(f"README.md is missing deep link: {link}", failures)
+        public_readme = readme_text.split("<details>", 1)[0]
+        if re.search(r"(?m)^git\s+(clone|status|pull|commit|push)\b", public_readme):
+            fail("README.md public onboarding contains a command-line Git step", failures)
+
+    if english_readme.exists():
+        english_text = english_readme.read_text(encoding="utf-8")
+        for phrase in ("Start in Codex", "The first successful task", "No terminal or Git knowledge is required", "Codex onboarding", "MIT License"):
+            if phrase not in english_text:
+                fail(f"README.en.md is missing onboarding phrase: {phrase}", failures)
+        public_english = english_text.split("<details>", 1)[0]
+        if re.search(r"(?m)^git\s+(clone|status|pull|commit|push)\b", public_english):
+            fail("README.en.md public onboarding contains a command-line Git step", failures)
+
+    if license_file.exists() and not license_file.read_text(encoding="utf-8").startswith("MIT License\n"):
+        fail("LICENSE is not the selected MIT license", failures)
 
     if reporting.exists():
         reporting_text = reporting.read_text(encoding="utf-8")

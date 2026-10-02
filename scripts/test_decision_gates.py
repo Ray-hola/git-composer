@@ -20,15 +20,15 @@ def main() -> int:
         "user", "repo_fact", "inference", "bounded_default", "unverified",
         "P0", "P1", "1–3", "READY", "WAITING FOR ANSWER", "CONFIRMATION REQUIRED",
         "BLOCKED", "COMPLETE", "Status", "Changed", "Why / evidence", "Risk & rollback",
-        "Unknowns / blocked choice", "Next question", "252 verified documents",
-        "10,000 candidate projects still pending", "Cleanup", "GitHub upload",
+        "Unknowns / blocked choice", "Next question", "verified-document count",
+        "Grilling closure before a write", "shared-understanding checkpoint", "Cleanup", "GitHub upload",
         "Release prep", "Mature-repository research",
     )
     for fragment in required:
         if fragment not in text:
             errors.append(f"reference missing {fragment!r}")
     files = sorted(FIXTURES.glob("*.json"))
-    if {p.stem for p in files} != {"cleanup", "github-upload", "release-prep", "mature-research"}:
+    if {p.stem for p in files} != {"cleanup", "github-upload", "release-prep", "mature-research", "grilling-closure"}:
         errors.append("decision-gate fixtures are incomplete")
     for path in files:
         try:
@@ -45,6 +45,15 @@ def main() -> int:
                 errors.append("research fixture must remain read-only")
         if record.get("name") == "github-upload" and set(record.get("forbidden_inferences", [])) != {"origin", "main", "public"}:
             errors.append("upload fixture must forbid origin/main/public inference")
+        if record.get("name") == "grilling-closure":
+            for case in record.get("cases", []):
+                required = ("frontier_closed", "shared_understanding_confirmed", "verification_passed")
+                if any(key not in case for key in required):
+                    errors.append(f"{path.name}: grilling case is missing a gate")
+                    continue
+                allowed = all(case[key] is True for key in required)
+                if case.get("commit_allowed") is not allowed:
+                    errors.append(f"{path.name}: commit gate result is inconsistent for {case.get('name')}")
     if errors:
         for error in errors:
             print(f"FAIL: {error}")

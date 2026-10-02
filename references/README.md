@@ -13,10 +13,11 @@ Use this page as the compact map from a user question to the maintained guidance
 | Procedure cards | [procedure-cards.md](procedure-cards.md) | You need an executable, evidence-backed workflow with stop conditions. |
 | Repository standards | [repository-standards.md](repository-standards.md) | You are choosing the smallest useful quality and maintenance gate. |
 | Metadata and badges | [metadata-and-badges.md](metadata-and-badges.md) | You are checking license, runtime, release, status, or badge claims. |
+| Codex onboarding | [codex-onboarding.md](codex-onboarding.md) | You use Codex without wanting to learn terminal or Git first. |
 | Reporting | [reporting-templates.md](reporting-templates.md) | You are handing off a change, blocker, or verification result. |
 | Mature repository examples | [mature-repositories.md](mature-repositories.md) | You need a bounded comparison to public repository practice. |
 | Ranking policy | [ranking-policy.yml](ranking-policy.yml) | You need the research selection and ranking constraints. |
 
 ## Machine-readable records
 
-Schemas and fixtures are kept under [`../schemas/`](../schemas/) and [`../fixtures/`](../fixtures/). The four evidence batches preserve the distinction between verified documents and the still-pending 10,000-project candidate target.
+Schemas and fixtures are kept under [`../schemas/`](../schemas/) and [`../fixtures/`](../fixtures/). Research fixtures preserve the distinction between verified documents and a separately tracked long-term candidate target; that target is not a completion claim for the Skill.

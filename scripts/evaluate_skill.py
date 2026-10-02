@@ -72,19 +72,25 @@ def validate_readme_contract() -> list[str]:
         return ["README.md is missing"]
     text = readme.read_text(encoding="utf-8")
     required_fragments = {
-        "first_five_minutes": "5 分钟只读快速开始",
-        "expected_output": "预期结果",
-        "status_block": "状态：已完成 / 部分完成 / 被阻塞",
+        "codex_entry": "在 Codex 中开始",
+        "expected_output": "第一次成功的判据",
+        "status_block": "状态：READY / WAITING FOR ANSWER / CONFIRMATION REQUIRED / BLOCKED / COMPLETE",
         "evidence_labels": "未验证",
-        "rollback": "验证与回退",
+        "rollback": "安全与恢复",
         "reporting_templates": "references/reporting-templates.md",
         "maintenance_check": "scripts/evaluate_skill.py",
         "remote_target": "https://github.com/Ray-Hola/git-composer.git",
-        "verified_count": "252 个去重文档",
+        "verified_count": "252 个去重证据文档",
+        "no_cli": "不需要终端或 Git",
+        "license": "MIT License",
     }
     for label, fragment in required_fragments.items():
         if fragment not in text:
             errors.append(f"README contract missing {label}: {fragment}")
+    public_text = text.split("<details>", 1)[0]
+    for forbidden in ("10,000 个候选项目目标仍为 pending", "许可证尚未决定", "No release", "no release"):
+        if forbidden in public_text:
+            errors.append(f"public README still exposes unresolved status: {forbidden}")
     research_reference = ROOT / "references" / "research-and-distillation.md"
     if not research_reference.is_file():
         errors.append("research reference is missing")

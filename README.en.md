@@ -6,77 +6,133 @@
 
 <p align="center">
   <strong>Make a repository easier to understand, change, verify, and recover.</strong><br />
-  A beginner-friendly companion for Git, README design, and repository maintenance.
+  A Codex-first companion for Git, README design, and repository maintenance.
 </p>
 
 <p align="center">
   <a href="README.md">中文</a> ·
   <a href="https://github.com/Ray-Hola/git-composer">GitHub</a> ·
+  <a href="references/codex-onboarding.md">Codex onboarding</a> ·
   <a href="references/README.md">Reference index</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Ray-Hola/git-composer"><img src="https://img.shields.io/badge/GitHub-view%20repository-181717?logo=github&logoColor=white" alt="View the GitHub repository" /></a>
   <a href="https://github.com/Ray-Hola/git-composer"><img src="https://img.shields.io/github/stars/Ray-Hola/git-composer?style=flat&label=stars" alt="GitHub stars" /></a>
-  <a href="#verification"><img src="https://img.shields.io/badge/status-local%20checks%20documented-2563eb" alt="Status: local checks documented" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-2563eb" alt="MIT license" /></a>
 </p>
 
-## Start in 60 seconds
+## Start in Codex
 
-Run a read-only inspection first. These commands do not edit files, commit, push, or change remotes:
-
-```sh
-git rev-parse --show-toplevel
-git status --short --branch
-git diff --stat
-git log -1 --format='%h %s%n%b'
-```
-
-Then ask Git Composer for a focused pass:
+You do not need to learn the terminal or Git first. Send this prompt with the repository link:
 
 ```text
-Use $git-composer to inspect this repository first. Keep existing changes, improve the README and verification entry points, then report changes, evidence, checks, risks, and recovery.
+Please install and enable git-composer from https://github.com/Ray-Hola/git-composer.
+Before installing, tell me the target location, files that may change, and decisions I need to make; do not commit or push automatically.
+After installation, explain what I can ask it to do and wait for my first task.
 ```
 
-The result should be a reviewable status report with scope, actual files, command results, evidence, unknowns, recovery, and one next step. Unrun checks stay marked **unverified**.
+If your Codex client has a Skill manager, choose “install from GitHub” and enter `Ray-Hola/git-composer`. If that entry is not available, use the natural-language prompt above.
 
-## What it helps with
+**No terminal or Git knowledge is required.** Maintainer commands and recovery details are kept in the collapsed reference section below.
 
-### Read before write
+## The first successful task
 
-Establish the root, branch, diff, history, runtime entry point, and current conventions before treating anything as a project fact.
+After installation, send:
 
-### Make small, reversible improvements
+```text
+Use $git-composer to inspect this repository read-only first.
+Keep my existing changes, tell me the three most valuable improvements, and do not edit, commit, or push yet.
+```
 
-Improve a README, folder guide, contribution note, or Git workflow without inventing licenses, releases, CI, or performance promises.
+You should receive a reviewable report containing:
 
-### Leave an evidence-led handoff
+- the target repository, branch, and worktree state;
+- evidence read from actual files rather than guesses;
+- completed, unverified, and user-decision items;
+- risks, recovery, and one next step.
 
-Record what changed, why, how it was checked, what remains unknown, and how to recover. Keep candidate projects, evidence documents, and research conclusions separate.
+Until you confirm the scope, the Skill must not overwrite files, create a commit, or push to a remote.
+
+## Prompts you can reuse
+
+| Goal | Tell Codex |
+| --- | --- |
+| Understand a repository | `Use $git-composer for a read-only review and keep existing changes.` |
+| Improve the landing page | `Make the README easier for a beginner; ask me the decisions first.` |
+| Commit safely | `Apply the confirmed scope; ask every unresolved question and commit only after checks pass.` |
+| Recover from a problem | `Stop writing. List completed checks, unverified items, and the smallest recovery path.` |
+
+## How it works
+
+1. **Find facts first:** the Skill reads the root, branch, diff, history, entry points, and existing conventions.
+2. **Ask choices next:** grilling rounds cover decisions that change scope, audience, license, verification, or side effects.
+3. **Confirm shared understanding:** Codex restates scope, acceptance, risks, recovery, and exclusions and waits for your confirmation.
+4. **Write last:** it edits only after confirmation and reports local commits, pushes, releases, and remote readback separately.
 
 ## Documentation
 
 | Need | Start here |
 | --- | --- |
-| Understand the repository shape | [Project structure](references/project-structure.md) |
-| Define governance and maintenance rules | [Governance and docs](references/governance-and-docs.md) |
+| Codex installation and first task | [Codex onboarding](references/codex-onboarding.md) |
+| Understand repository shape | [Project structure](references/project-structure.md) |
+| Define governance and maintenance | [Governance and docs](references/governance-and-docs.md) |
 | Design the README landing page | [README design](references/readme-design.md) |
 | Handle branches, commits, sync, and recovery | [Git workflows](references/git-workflows.md) |
 | Gate Git writes, remotes, and releases | [Git decision gates](references/decision-gates.md) |
 | Turn research into reusable rules | [Research and distillation](references/research-and-distillation.md) |
 | Write executable, evidence-backed procedures | [Procedure cards](references/procedure-cards.md) |
 | Check license, version, and badge facts | [Metadata and badges](references/metadata-and-badges.md) |
+| Write status, evidence, and recovery reports | [Reporting templates](references/reporting-templates.md) |
 | Browse the complete map | [references/README.md](references/README.md) |
 
-## Evidence-led workflow
+## Evidence and boundaries
 
-- The verified research material contains **252 deduplicated evidence documents**. Sources, retrieval status, and candidate rules live in [research and distillation](references/research-and-distillation.md) and its fixtures.
-- Git Composer keeps evidence, rules, and user-facing conclusions separate; this landing page focuses on the capabilities that are ready to use.
-- Research fetching stays read-only, and public HTML fallback keeps provenance and retrieval status available for review.
+- The verified research material contains **252 deduplicated evidence documents**, with sources, retrieval status, and candidate rules kept in [research and distillation](references/research-and-distillation.md) and its fixtures.
+- The fourth evidence fixture is available [here](fixtures/corpus/github-public-doc-evidence-batch-4.json); it remains separate from candidate targets, rule candidates, and user-facing conclusions.
+- Candidate research targets are tracked separately from verified documents; a target is not a claim that the Skill has completed that research.
+- Research fetching stays read-only, and public HTML fallback preserves provenance and retrieval status.
+- The project does not claim unverified licenses, releases, CI, performance, user counts, or screenshots.
 
 ## Verification
 
-From the skill root, run the checks that match the change:
+You can ask Codex to run the checks that match your change:
+
+```text
+Use $git-composer to run the checks that match this change.
+Report local checks, CI, remote state, and visual preview separately; mark anything not run as unverified.
+```
+
+The maintainer suite covers structure, references, UI metadata, schema, fallback behavior, four evidence batches, grilling gates, and offline evaluation. It does not claim target-repository business tests, remote CI, or GitHub page visual approval.
+
+## Safety and recovery
+
+- Local writes, commits, history rewrites, and remote writes are separate actions; read before write.
+- Unanswered user questions, unconfirmed shared understanding, or failed checks block commits and pushes.
+- Never publish API tokens, private keys, cookies, private configuration, message records, databases, media, or machine state.
+- For shared commits, prefer `git revert` instead of force-pushing or rewriting history.
+
+## License
+
+This project is released under the [MIT License](LICENSE), © `Ray-hola`. Third-party materials remain under their own licenses.
+
+<details>
+<summary>Maintainer reference: CLI install, checks, and recovery</summary>
+
+### Install and update
+
+After confirming that the target directory has no local changes to keep:
+
+```sh
+mkdir -p ~/.codex/skills
+git clone https://github.com/Ray-Hola/git-composer.git ~/.codex/skills/git-composer
+git -C ~/.codex/skills/git-composer pull --ff-only
+```
+
+When local changes exist, ask Codex to inspect them and provide a recovery path before updating.
+
+### Exact maintenance checks
+
+From the Skill root:
 
 ```sh
 python3 scripts/verify_skill.py
@@ -90,17 +146,17 @@ python3 scripts/test_decision_gates.py
 python3 scripts/evaluate_skill.py
 ```
 
-These checks cover structure, references, UI metadata, schema, fallback behavior, four evidence batches, Git decision gates, and offline evaluation. They do not claim target-repository business tests, remote CI, or GitHub page visual approval.
+### Delivery status block
 
-## Safety and recovery
+```text
+Status: READY / WAITING FOR ANSWER / CONFIRMATION REQUIRED / BLOCKED / COMPLETE
+Scope: <files or remote object>
+Changed: <one sentence>
+Verification: <command> -> passed / failed / unverified
+Evidence: <path, line, commit, or page>
+Risk and recovery: <risk and recovery path>
+Unknowns: <facts still to confirm, or none>
+Next: <one most valuable action>
+```
 
-- Local writes, commits, history rewrites, and remote writes are separate actions; default to read before write.
-- Do not publish API tokens, private keys, cookies, private configuration, message records, databases, media, or machine state.
-- For shared commits, prefer `git revert` instead of force-pushing or rewriting shared history.
-- If a credential may be exposed, stop sharing it and rotate it before repairing repository history.
-
-## Contributing
-
-Start with a read-only inspection, make one focused change, and include the exact verification command and result. Use the [procedure cards](references/procedure-cards.md) when turning a proven pattern into a reusable workflow.
-
-See and discuss the project on [GitHub](https://github.com/Ray-Hola/git-composer).
+</details>
