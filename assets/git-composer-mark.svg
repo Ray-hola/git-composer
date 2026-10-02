@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Git Composer mark</title>
+  <desc id="desc">A warm orange bracket framing a blue commit diamond.</desc>
+  <rect width="96" height="96" rx="24" fill="#0f172a"/>
+  <path d="M27 22 16 33v30l11 11" fill="none" stroke="#fb923c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m69 22 11 11v30L69 74" fill="none" stroke="#fb923c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m48 27 21 21-21 21-21-21 21-21Z" fill="#38bdf8"/>
+  <circle cx="48" cy="48" r="7" fill="#0f172a"/>
+</svg>
